@@ -1,0 +1,20 @@
+<div class="content">
+    <div class="current-filter">
+        <div class="filter-title">
+            <p>Материалы по фильтрам</p>
+        </div>
+        <div class="filters-value">
+            <p class="test">Фильтр 1</p>
+            <p class="test">Фильтр 2</p>
+            <p class="test">Фильтр 3</p>
+        </div>
+    </div>
+    <div class="create-module ">
+        <button class="create-module-input" (click)="onClick()">Создать модуль</button>
+    </div>
+    <div class="modules" *ngFor="let module of modules">
+        <div class="module">
+            <p>{{module.title}}</p>
+        </div>
+    </div>
+</div>

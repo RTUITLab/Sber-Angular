@@ -1,0 +1,17 @@
+.wrapper {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 25% 75%;
+}
+
+.tab-menu {
+    grid-column: 1;
+    border: solid 1px #979797;
+    background: #d8d8d8;
+    padding-left: 10%;
+    font-size: 20px;
+}
+
+.content {
+    grid-column: 2;
+}

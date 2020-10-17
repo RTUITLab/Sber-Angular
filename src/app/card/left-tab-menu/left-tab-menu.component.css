@@ -1,0 +1,15 @@
+.search-input {
+    height: 2em;
+    width: 85%;
+    font-size: 20px;
+    padding-left: 2%;
+}
+
+.search {
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.my-module {
+    padding-top: 5%;
+}
