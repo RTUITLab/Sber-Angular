@@ -1,8 +1,7 @@
 /* tslint:disable */
 import { ModuleGeneralInformation } from './module-general-information';
-export interface Module {
+export interface GeneralInfoTag {
   generalInformation?: ModuleGeneralInformation;
-  id?: number;
-  lastEditTime?: string;
-  title?: null | string;
+  generalInformationId?: number;
+  tag?: null | string;
 }

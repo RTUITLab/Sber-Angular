@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
+import { GeneralInformationsService } from './services/general-informations.service';
 import { ModulesService } from './services/modules.service';
 
 /**
@@ -13,6 +14,7 @@ import { ModulesService } from './services/modules.service';
   exports: [],
   declarations: [],
   providers: [
+    GeneralInformationsService,
     ModulesService,
     ApiConfiguration
   ],
