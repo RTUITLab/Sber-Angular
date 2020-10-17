@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="569px" height="616px" viewBox="0 0 569 616" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 3</title>
+    <defs>
+        <linearGradient x1="34.773121%" y1="7.27323795%" x2="24.7088464%" y2="76.4058679%" id="linearGradient-1">
+            <stop stop-color="#CEEED7" offset="0%"></stop>
+            <stop stop-color="#5CD3A1" offset="100%"></stop>
+        </linearGradient>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <linearGradient x1="74.3893762%" y1="44.5115771%" x2="50%" y2="92.4005023%" id="linearGradient-3">
+            <stop stop-color="#96ECAE" offset="0%"></stop>
+            <stop stop-color="#5CD3A1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="34.773121%" y1="5.48822966%" x2="50%" y2="97.0594787%" id="linearGradient-4">
+            <stop stop-color="#96ECAE" offset="0%"></stop>
+            <stop stop-color="#5CD3A1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Page-3-Popup" transform="translate(166.000000, -630.000000)">
+            <g id="Group-2" transform="translate(0.000000, -0.763828)">
+                <g id="Group-3" transform="translate(-166.000000, 631.000000)">
+                    <path d="M269,503.763828 C417.564598,503.763828 530,391.59644 530,250.763828 C530,146.053849 459.214925,67.0281836 364,27.7638284 C300.523383,1.58759166 254.19005,-6.07907501 225,4.76382842 C186.6931,18.84793 159.6931,28.1812634 144,32.7638284 C47.4075394,60.9699336 0,135.52709 0,248.763828 C0,389.59644 120.435402,503.763828 269,503.763828 Z" id="Oval" fill-opacity="0.7" fill="url(#linearGradient-1)" filter="url(#filter-2)"></path>
+                    <path d="M284,614.763828 C432.564598,614.763828 568,502.59644 568,361.763828 C568,342.355089 571.515568,318.600488 564,276.763828 C556.484432,234.927169 545.751425,210.689703 538,194.763828 C530.855065,180.084032 517.283232,168.048209 507,157.763828 C455.962975,106.721103 374.199701,104.763828 284,104.763828 C135.435402,104.763828 15,218.931217 15,359.763828 C15,500.59644 135.435402,614.763828 284,614.763828 Z" id="Oval" fill-opacity="0.8" fill="url(#linearGradient-3)"></path>
+                    <ellipse id="Oval" fill-opacity="0.7" fill="url(#linearGradient-4)" cx="295.5" cy="276.263828" rx="234.5" ry="227.5"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
