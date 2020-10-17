@@ -1,0 +1,7 @@
+<p>Write your name</p>
+
+<input [value]="username" (input)="saveUsername($event.target.value)"/>
+
+<p>{{username}}</p>
+
+<button routerLink='/'>Go to main</button>
