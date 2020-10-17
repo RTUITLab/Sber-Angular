@@ -11,13 +11,32 @@
 </div>
 <div>
     <h4>Фильтры:</h4>
-    <!-- <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select>
-            <mat-option>
-                Test
-            </mat-option>
-        </mat-select>
-    </mat-form-field> -->
-    <button class="" (click)="onClick()">На главную</button>
+    <div>
+        <mat-form-field appearance="fill">
+            <mat-label>Предмет</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Класс</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Тег</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{food.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+
+    <button mat-raised-button color="primary">На главную</button>
 </div>

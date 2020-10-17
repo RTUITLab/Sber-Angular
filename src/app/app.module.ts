@@ -11,24 +11,34 @@ import { ApiModule } from 'src/api/api.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TestapiComponent } from './testapi/testapi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProgressComponent } from './progress/progress.component';
+import { MatButtonModule } from '@angular/material/button';
+import { AddModuleComponent } from './add-module/add-module.component';
+import { FirstStepComponent } from './first-step/first-step.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftTabMenuComponent,
     CardComponent,
+    TestapiComponent,
     CardComponentComponent,
-    TestapiComponent
+    ProgressComponent,
+    AddModuleComponent,
+    FirstStepComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'test', component: TestapiComponent},
+      {path: 'create/firstStep/:id', component: AddModuleComponent},
       {path: '', component: CardComponent}
     ]),
     HttpClientModule,
     ApiModule.forRoot({rootUrl: 'https://realityshift-sber.rtuitlab.ru'}),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
+interface Food {
+  value: string;
+  viewValue: string;
+}
+
 @Component({
   selector: 'app-left-tab-menu',
   templateUrl: './left-tab-menu.component.html',
@@ -15,5 +20,12 @@ export class LeftTabMenuComponent implements OnInit {
   onClick(){
 
   }
+  
+
+  foods: Food[] = [
+    {value: 'steak-0', viewValue: 'Steak'},
+    {value: 'pizza-1', viewValue: 'Pizza'},
+    {value: 'tacos-2', viewValue: 'Tacos'}
+  ];
 
 }

@@ -8,7 +8,9 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
+import { CreateEditModuleRequest } from '../models/create-edit-module-request';
 import { Module } from '../models/module';
+import { ModuleCompactResponse } from '../models/module-compact-response';
 
 @Injectable({
   providedIn: 'root',
@@ -34,7 +36,7 @@ export class ModulesService extends BaseService {
    */
   apiModulesGet$Plain$Response(params?: {
 
-  }): Observable<StrictHttpResponse<Array<Module>>> {
+  }): Observable<StrictHttpResponse<Array<ModuleCompactResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesGetPath, 'get');
     if (params) {
@@ -47,7 +49,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Array<Module>>;
+        return r as StrictHttpResponse<Array<ModuleCompactResponse>>;
       })
     );
   }
@@ -60,10 +62,10 @@ export class ModulesService extends BaseService {
    */
   apiModulesGet$Plain(params?: {
 
-  }): Observable<Array<Module>> {
+  }): Observable<Array<ModuleCompactResponse>> {
 
     return this.apiModulesGet$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<Array<Module>>) => r.body as Array<Module>)
+      map((r: StrictHttpResponse<Array<ModuleCompactResponse>>) => r.body as Array<ModuleCompactResponse>)
     );
   }
 
@@ -75,7 +77,7 @@ export class ModulesService extends BaseService {
    */
   apiModulesGet$Json$Response(params?: {
 
-  }): Observable<StrictHttpResponse<Array<Module>>> {
+  }): Observable<StrictHttpResponse<Array<ModuleCompactResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesGetPath, 'get');
     if (params) {
@@ -88,7 +90,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Array<Module>>;
+        return r as StrictHttpResponse<Array<ModuleCompactResponse>>;
       })
     );
   }
@@ -101,10 +103,10 @@ export class ModulesService extends BaseService {
    */
   apiModulesGet$Json(params?: {
 
-  }): Observable<Array<Module>> {
+  }): Observable<Array<ModuleCompactResponse>> {
 
     return this.apiModulesGet$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<Array<Module>>) => r.body as Array<Module>)
+      map((r: StrictHttpResponse<Array<ModuleCompactResponse>>) => r.body as Array<ModuleCompactResponse>)
     );
   }
 
@@ -120,8 +122,8 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Plain$Response(params?: {
-      body?: Module
-  }): Observable<StrictHttpResponse<Module>> {
+      body?: CreateEditModuleRequest
+  }): Observable<StrictHttpResponse<ModuleCompactResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesPostPath, 'post');
     if (params) {
@@ -135,7 +137,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleCompactResponse>;
       })
     );
   }
@@ -147,11 +149,11 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Plain(params?: {
-      body?: Module
-  }): Observable<Module> {
+      body?: CreateEditModuleRequest
+  }): Observable<ModuleCompactResponse> {
 
     return this.apiModulesPost$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleCompactResponse>) => r.body as ModuleCompactResponse)
     );
   }
 
@@ -162,8 +164,8 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Json$Response(params?: {
-      body?: Module
-  }): Observable<StrictHttpResponse<Module>> {
+      body?: CreateEditModuleRequest
+  }): Observable<StrictHttpResponse<ModuleCompactResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesPostPath, 'post');
     if (params) {
@@ -177,7 +179,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleCompactResponse>;
       })
     );
   }
@@ -189,11 +191,11 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Json(params?: {
-      body?: Module
-  }): Observable<Module> {
+      body?: CreateEditModuleRequest
+  }): Observable<ModuleCompactResponse> {
 
     return this.apiModulesPost$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleCompactResponse>) => r.body as ModuleCompactResponse)
     );
   }
 
@@ -303,7 +305,7 @@ export class ModulesService extends BaseService {
    */
   apiModulesIdPut$Response(params: {
     id: number;
-      body?: Module
+      body?: CreateEditModuleRequest
   }): Observable<StrictHttpResponse<void>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdPutPath, 'put');
@@ -332,7 +334,7 @@ export class ModulesService extends BaseService {
    */
   apiModulesIdPut(params: {
     id: number;
-      body?: Module
+      body?: CreateEditModuleRequest
   }): Observable<void> {
 
     return this.apiModulesIdPut$Response(params).pipe(

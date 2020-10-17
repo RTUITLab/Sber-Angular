@@ -5,9 +5,18 @@ name: $(BuildID)-$(Build.SourceBranchName)
 
 stages:
 - stage: build
+  variables:
+    npm_config_cache: $(Pipeline.Workspace)/.npm
   jobs:
   - job: buildFront
     steps:
+    - task: Cache@2
+      inputs:
+        key: 'npm | "$(Agent.OS)" | package-lock.json'
+        restoreKeys: |
+          npm | "$(Agent.OS)"
+        path: $(npm_config_cache)
+      displayName: Cache npm
     - task: Npm@1
       displayName: npm ci
       inputs:
@@ -38,3 +47,33 @@ stages:
         tags: |
           $(Build.BuildId)
           latest
+
+- stage: deploy
+  condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+  jobs:
+    - deployment: DeployFront
+      displayName: Deploy front
+      pool:
+        vmImage: 'Ubuntu-16.04'
+      environment: 'production'
+      strategy:
+        runOnce:
+          on:
+            failure:
+              steps:
+                - download: none
+                - task: SSH@0
+                  inputs:
+                    sshEndpoint: 'swarm manager'
+                    runOptions: 'commands'
+                    commands: 'docker service rollback sber-realityshift_front'
+                    readyTimeout: '20000'
+          deploy:
+            steps:
+              - download: none
+              - task: SSH@0
+                inputs:
+                  sshEndpoint: 'swarm manager'
+                  runOptions: 'commands'
+                  commands: 'docker service update --image rtuitlab/sber-realityshift-front:$(Build.BuildId) sber-realityshift_front'
+                  readyTimeout: '20000'

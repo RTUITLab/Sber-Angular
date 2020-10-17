@@ -1,20 +1,24 @@
 <div class="content">
     <div class="current-filter">
         <div class="filter-title">
-            <p>Материалы по фильтрам</p>
+            <p>Доступные материалы</p>
         </div>
-        <div class="filters-value">
-            <p class="test">Фильтр 1</p>
-            <p class="test">Фильтр 2</p>
-            <p class="test">Фильтр 3</p>
+        <div>
+            <h4>Фильтры:</h4>
+            <div class="filters-value">
+                <h5 class="test">Фильтр 1</h5>
+                <h5 class="test">Фильтр 2</h5>
+                <h5 class="test">Фильтр 3</h5>
+            </div>
         </div>
     </div>
     <div class="create-module ">
-        <button class="create-module-input" (click)="onClick()">Создать модуль</button>
+        <button class="create-module-input" routerLink="create/firstStep" (click)="onClick()">Создать модуль</button>
     </div>
     <div class="modules" *ngFor="let module of modules">
-        <div class="module">
-            <p>{{module.title}}</p>
+        <div class="module" [routerLink]="['create/firstStep', module.id]" routerLinkActive="router-link-active">
+            <p>Последнее редактирование: {{getDate(module)}}</p>
+            <p>Название: {{module.title}}</p>
         </div>
     </div>
 </div>
