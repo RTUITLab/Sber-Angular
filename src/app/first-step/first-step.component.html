@@ -1,1 +1,36 @@
-<div></div>
+<div class="form">
+    <form novalidate [formGroup]="firstFormGroup" class="workspace" *ngIf="currentStep === 1">
+        <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
+        <div style="grid-row: 2;" class="name">
+            <label>Название</label>
+            <input type="text" required placeholder="Введите название модуля" formControlName="">
+        </div>
+        <div style="grid-row: 3;" class="general">
+            <div class="levels">
+                <label>Уровень видимости</label>
+                <div>
+                    <input name="level" type="radio" id="school">
+                    <label for="school">Школьный</label>
+                <div>
+                </div>
+                    <input name="level" type="radio" id="personal">
+                    <label for="school">Персональный</label>
+                </div>
+                <div>
+                    <input name="level" type="radio" id="global">
+                    <label for="global">Глобальный</label>
+                </div>
+            </div>
+            <div class="info">
+                <div>
+                    <label>Класс</label>
+                    <input type="">
+                </div>
+                <div>
+                    <label>Предмет</label>
+                    <input type="">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
