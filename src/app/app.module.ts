@@ -11,10 +11,10 @@ import { ApiModule } from 'src/api/api.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TestapiComponent } from './testapi/testapi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ProgressComponent } from './progress/progress.component';
+import { ProgressComponent } from './add-module/progress/progress.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AddModuleComponent } from './add-module/add-module.component';
-import { FirstStepComponent } from './first-step/first-step.component';
+import { FirstStepComponent } from './add-module/first-step/first-step.component';
 import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
@@ -31,7 +31,18 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'create/firstStep/:id', component: AddModuleComponent},
+      {path: 'create', component: AddModuleComponent, children: [
+        {
+          path: 'firstStep', // child route path
+          component: FirstStepComponent, // child route component that the router renders
+        }
+      ]},
+      {path: 'create', component: AddModuleComponent, children: [
+        {
+          path: 'firstStep/:id', // child route path
+          component: FirstStepComponent, // child route component that the router renders
+        }
+      ]},
       {path: '', component: CardComponent}
     ]),
     HttpClientModule,
