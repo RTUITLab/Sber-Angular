@@ -1,15 +1,26 @@
+.header {
+    margin-top: 40px;
+    font-weight: 600;
+    font-size: 22px;
+}
+
 .search-input {
-    height: 2em;
-    width: 85%;
+    border: none;
     font-size: 20px;
-    padding-left: 2%;
 }
 
 .search {
-    padding-top: 5%;
-    padding-bottom: 5%;
+    margin: 40px 0;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
 }
 
-.my-module {
-    padding-top: 5%;
+
+.search > img {
+    position: absolute;
+    height: 25px;
+    width: 25px;
 }

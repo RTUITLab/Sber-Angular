@@ -31,6 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
+      {path: 'create/firstStep', component: AddModuleComponent},
       {path: 'create/firstStep/:id', component: AddModuleComponent},
       {path: '', component: CardComponent}
     ]),
