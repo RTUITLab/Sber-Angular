@@ -7,10 +7,10 @@
     <div style="grid-row: 3;" class="general">
         <div class="levels">
             <label>Уровень видимости</label>
-            <mat-radio-group aria-label="Уровень видимости" [(ngModel)]="module.visibility">
-                <mat-radio-button [value]="0">Школьный</mat-radio-button>
-                <mat-radio-button [value]="1">Персональный</mat-radio-button>
-                <mat-radio-button [value]="2">Глобальный</mat-radio-button>
+            <mat-radio-group aria-label="Уровень видимости" [(ngModel)]="visibility">
+                <mat-radio-button value="School">Школьный</mat-radio-button>
+                <mat-radio-button value="Personal">Персональный</mat-radio-button>
+                <mat-radio-button value="Global">Глобальный</mat-radio-button>
             </mat-radio-group>
             <div>
                 <label>Теги</label>
