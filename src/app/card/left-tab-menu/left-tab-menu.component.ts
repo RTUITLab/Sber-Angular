@@ -12,4 +12,8 @@ export class LeftTabMenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onClick(){
+
+  }
+
 }
