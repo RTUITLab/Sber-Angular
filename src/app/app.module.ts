@@ -21,7 +21,7 @@ import { FirstStepComponent } from './first-step/first-step.component';
     AppComponent,
     LeftTabMenuComponent,
     CardComponent,
-    TestapiComponent
+    TestapiComponent,
     CardComponentComponent,
     ProgressComponent,
     AddModuleComponent,
@@ -30,12 +30,11 @@ import { FirstStepComponent } from './first-step/first-step.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'test', component: TestapiComponent},
+      {path: 'create/firstStep', component: AddModuleComponent},
       {path: '', component: CardComponent}
     ]),
     HttpClientModule,
     ApiModule.forRoot({rootUrl: 'https://realityshift-sber.rtuitlab.ru'}),
-    BrowserAnimationsModule
     BrowserAnimationsModule,
     MatButtonModule
   ],
