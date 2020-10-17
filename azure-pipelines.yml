@@ -5,16 +5,18 @@ name: $(BuildID)-$(Build.SourceBranchName)
 
 stages:
 - stage: build
+  variables:
+    npm_config_cache: $(Pipeline.Workspace)/.npm
   jobs:
   - job: buildFront
     steps:
-    # - task: Cache@2
-    #   inputs:
-    #     key: 'npm | "$(Agent.OS)" | package-lock.json'
-    #     restoreKeys: |
-    #       npm | "$(Agent.OS)"
-    #     path: $(npm_config_cache)
-    #   displayName: Cache npm
+    - task: Cache@2
+      inputs:
+        key: 'npm | "$(Agent.OS)" | package-lock.json'
+        restoreKeys: |
+          npm | "$(Agent.OS)"
+        path: $(npm_config_cache)
+      displayName: Cache npm
     - task: Npm@1
       displayName: npm ci
       inputs:
