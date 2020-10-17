@@ -1,36 +1,60 @@
 <div class="form">
-    <form novalidate [formGroup]="firstFormGroup" class="workspace" *ngIf="currentStep === 1">
-        <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
-        <div style="grid-row: 2;" class="name">
-            <label>Название</label>
-            <input type="text" required placeholder="Введите название модуля" formControlName="">
-        </div>
-        <div style="grid-row: 3;" class="general">
-            <div class="levels">
-                <label>Уровень видимости</label>
-                <div>
-                    <input name="level" type="radio" id="school">
-                    <label for="school">Школьный</label>
-                <div>
-                </div>
-                    <input name="level" type="radio" id="personal">
-                    <label for="personal">Персональный</label>
-                </div>
-                <div>
-                    <input name="level" type="radio" id="global">
-                    <label for="global">Глобальный</label>
-                </div>
-            </div>
-            <div class="info">
-                <div>
-                    <label>Класс</label>
-                    <input type="">
-                </div>
-                <div>
-                    <label>Предмет</label>
-                    <input type="">
-                </div>
+    <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
+    <div style="grid-row: 2;" class="name">
+        <label>Название</label>
+        <input type="text" required placeholder="Введите название модуля" [(ngModel)]="module.title">
+    </div>
+    <div style="grid-row: 3;" class="general">
+        <div class="levels">
+            <label>Уровень видимости</label>
+            <mat-radio-group aria-label="Уровень видимости" [(ngModel)]="module.visibility">
+                <mat-radio-button [value]="0">Школьный</mat-radio-button>
+                <mat-radio-button [value]="1">Персональный</mat-radio-button>
+                <mat-radio-button [value]="2">Глобальный</mat-radio-button>
+            </mat-radio-group>
+            <div>
+                <label>Теги</label>
+                <input type="" placeholder="Добавьте теги для модуля" [(ngModel)]="tag">
             </div>
         </div>
-    </form>
+        <div class="info">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Класс</mat-label>
+                    <mat-select [(ngModel)]="class">
+                        <mat-option value="1">
+                            1
+                        </mat-option>
+                        <mat-option value="2">
+                            2
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Предмет</mat-label>
+                    <mat-select [(ngModel)]="module.course">
+                        <mat-option value="кек">
+                            "Kek"
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <label>Трудоемкость</label>
+                <input type="" placeholder="Сколько времени затратит ученик" [(ngModel)]="time">
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <label>Базовая идея</label>
+        <input type="text" required placeholder="Главная мысль, в понимание которой вносит вклад этот модуль" [(ngModel)]="module.basicIdea">
+    </div>
+    <div>
+        <label>Проблемный вопрос</label>
+        <input type="text" required placeholder="Сложный вопрос, ответить на который будет возможно после прохождения модуля" [(ngModel)]="module.problemQuestion">
+    </div>
+    <button mat-button class="button" [routerLink]="''" routerLinkActive="router-link-active" (click)="onClick()"><img class="left" src="../../../assets/icons/down-arrow.svg" >Перейти к следующему шагу</button>
 </div>

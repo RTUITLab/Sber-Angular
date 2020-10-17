@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
 import { ModuleResponse } from 'src/api/models';
 import { ModulesService } from 'src/api/services';

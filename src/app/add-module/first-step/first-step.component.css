@@ -42,3 +42,17 @@ input[type="text"] {
 .info {
     grid-column: 2;
 }
+
+.button {
+    border-radius: 0;
+    background-color: #6100ee;
+    position: absolute;
+    bottom: 20px;
+}
+
+.icon {
+    background-color: #FFFFFF;
+    border: #000000;
+    height: 50px;
+    width: 50px;
+}
