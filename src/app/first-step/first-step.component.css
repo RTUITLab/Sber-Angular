@@ -1,0 +1,44 @@
+.form {
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.header {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.workspace {
+    display: grid;
+}
+
+.header > span {
+    font-weight: 600;
+}
+
+label {
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+label[for] {
+    font-weight: 400;
+}
+
+input[type="text"] {
+    width: 100%;
+}
+
+.general {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.levels {
+    grid-column: 1;
+}
+
+.info {
+    grid-column: 2;
+}

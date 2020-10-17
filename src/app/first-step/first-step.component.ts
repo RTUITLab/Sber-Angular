@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-step.component.css']
 })
 export class FirstStepComponent implements OnInit {
+  currentStep = 1;
 
   constructor() { }
 

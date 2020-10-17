@@ -1,7 +1,12 @@
 .container {
+    box-sizing: border-box;
+    width: 25%;
     padding: 20px;
+    padding-top: 40px;
     background-image: linear-gradient(to bottom, rgba(0, 102, 55, 0.54), #80d997 57%, #9dea96);
     color: #FFFFFF;
+    height: 100vh;
+    position: fixed;
 }
 
 .head {
@@ -61,12 +66,14 @@
 }
 
 #line {
-    position: relative;
+    position: absolute;
+    grid-row-start: 1;
+    grid-row-end: 13;
     height: 510px;
     width: 0px;
     border-left: 3px dotted #FFFFFF;
-    left: 28px;
-    bottom: 520px;
+    left: 48px;
+    top: 100px;
 }
 
 .submenu {
@@ -107,5 +114,17 @@
 
 .button {
     border-radius: 0;
-    
+    background-color: #6100ee;
+    position: absolute;
+    bottom: 20px;
+}
+
+.mat-button {
+    vertical-align: middle;
+}
+
+.left {
+    transform: rotate(90deg);
+    height: 20px;
+    vertical-align: middle;
 }

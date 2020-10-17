@@ -1,4 +1,16 @@
 .page {
     display: grid;
-    grid-template-columns: 25%;
+    grid-template-columns: 25% 50% 25%;
+}
+
+.progress {
+    grid-column: 1;
+}
+
+.form {
+    grid-column: 2;
+}
+
+.send {
+    grid-column: 3;
 }
