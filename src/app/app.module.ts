@@ -15,6 +15,7 @@ import { ProgressComponent } from './progress/progress.component';
 import { MatButtonModule } from '@angular/material/button';
 import { AddModuleComponent } from './add-module/add-module.component';
 import { FirstStepComponent } from './first-step/first-step.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -30,13 +31,14 @@ import { FirstStepComponent } from './first-step/first-step.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: 'create/firstStep', component: AddModuleComponent},
+      {path: 'create/firstStep/:id', component: AddModuleComponent},
       {path: '', component: CardComponent}
     ]),
     HttpClientModule,
     ApiModule.forRoot({rootUrl: 'https://realityshift-sber.rtuitlab.ru'}),
     BrowserAnimationsModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
