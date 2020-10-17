@@ -5,6 +5,8 @@ import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { GeneralInformationsService } from './services/general-informations.service';
 import { ModulesService } from './services/modules.service';
+import { TagsService } from './services/tags.service';
+import { TeacherInstructionsService } from './services/teacher-instructions.service';
 
 /**
  * Module that provides all services and configuration.
@@ -16,6 +18,8 @@ import { ModulesService } from './services/modules.service';
   providers: [
     GeneralInformationsService,
     ModulesService,
+    TagsService,
+    TeacherInstructionsService,
     ApiConfiguration
   ],
 })
