@@ -1,0 +1,44 @@
+.content {
+    padding-left: 5%;
+    padding-top: 2%;
+    padding-right: 2%;
+    display: grid;
+}
+
+.current-filter {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.filter-title {
+    grid-row: 1;
+}
+
+.filters-value {
+    grid-row: 2;
+}
+
+.test {
+    display: inline-block;
+    width: max-content;
+    margin: 0;
+    margin-right: 20px;
+}
+
+.create-module {
+    grid-column: 2;
+    align-self: center;
+    align-content: initial;
+}
+
+.create-module-input {
+    height: 57px;
+    width: 302px;
+    font-size: 20px;
+}
+
+.module {
+    padding-top: 5%;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
