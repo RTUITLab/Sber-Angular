@@ -2,61 +2,83 @@
     <div class="head">
         <div class="name">
             <div>Создание модуля:</div>
-            <div>Укладка асфальта</div> <!-- TODO if !first step-->
+            <div>Укладка асфальта</div>
+            <!-- TODO if !first step-->
         </div>
-        <div class="icon"><img src=""></div> <!-- TODO load img-->
+        <div class="icon"><img src=""></div>
+        <!-- TODO load img-->
     </div>
 
     <div class="progress">
         <div class="progressRaw">
-            <div class="statusCircle"><div>1</div></div>
+            <div class="statusCircle">
+                <div>1</div>
+            </div>
             <div class="status">Основное</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(1)}">
             <div class="submenuRaw">
-                <div class="submenuCircle"><div></div></div>
+                <div class="submenuCircle">
+                    <div></div>
+                </div>
                 <div class="submenuLabel">1.1: Основная информация</div>
             </div>
             <div class="submenuRaw">
-                <div class="submenuCircle"><div></div></div>
+                <div class="submenuCircle">
+                    <div></div>
+                </div>
                 <div class="submenuLabel">1.2: Инструкция для учителя</div>
             </div>
             <div class="submenuRaw">
-                <div class="submenuCircle"><div></div></div>
+                <div class="submenuCircle">
+                    <div></div>
+                </div>
                 <div class="submenuLabel">1.3: Данные о цели</div>
             </div>
         </div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>2</div></div>
+            <div class="statusCircle">
+                <div>2</div>
+            </div>
             <div class="status">Отправка формы</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(2)}"></div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>3</div></div>
+            <div class="statusCircle">
+                <div>3</div>
+            </div>
             <div class="status">Проверка редактором</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(3)}"></div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>4</div></div>
+            <div class="statusCircle">
+                <div>4</div>
+            </div>
             <div class="status">Внесение правок</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(4)}"></div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>5</div></div>
+            <div class="statusCircle">
+                <div>5</div>
+            </div>
             <div class="status">Проверка корректорами</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(5)}"></div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>6</div></div>
+            <div class="statusCircle">
+                <div>6</div>
+            </div>
             <div class="status">Проверка корректорами</div>
         </div>
         <div class="submenu" [ngClass]="{active: isActiveStatus(6)}"></div>
         <div class="progressRaw">
-            <div class="statusCircle"><div>7</div></div>
+            <div class="statusCircle">
+                <div>7</div>
+            </div>
             <div class="status">Публикация материала</div>
         </div>
         <div id="line"></div>
     </div>
 
-    <button mat-button class="button"><img class="left" src="../../assets/icons/down-arrow.svg">Мои модули</button>
+    <button mat-button class="button" [routerLink]="''" routerLinkActive="router-link-active"><img class="left" src="../../assets/icons/down-arrow.svg" >Мои модули</button>
 </div>

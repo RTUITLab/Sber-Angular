@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Module } from 'src/api/models';
+import { ModuleResponse } from 'src/api/models';
 import { ModulesService } from 'src/api/services';
 
 @Component({
@@ -11,7 +11,7 @@ export class TestapiComponent implements OnInit {
 
   constructor(private modulesService: ModulesService) { }
 
-  public modules: Module[] = [];
+  public modules: ModuleResponse[] = [];
 
   async ngOnInit(): Promise<void> {
     this.modules = await this.modulesService.apiModulesGet$Json().toPromise();

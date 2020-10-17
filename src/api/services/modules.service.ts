@@ -9,8 +9,8 @@ import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
 import { CreateEditModuleRequest } from '../models/create-edit-module-request';
-import { Module } from '../models/module';
 import { ModuleCompactResponse } from '../models/module-compact-response';
+import { ModuleResponse } from '../models/module-response';
 
 @Injectable({
   providedIn: 'root',
@@ -213,7 +213,7 @@ export class ModulesService extends BaseService {
   apiModulesIdGet$Plain$Response(params: {
     id: number;
 
-  }): Observable<StrictHttpResponse<Module>> {
+  }): Observable<StrictHttpResponse<ModuleResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdGetPath, 'get');
     if (params) {
@@ -227,7 +227,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleResponse>;
       })
     );
   }
@@ -241,10 +241,10 @@ export class ModulesService extends BaseService {
   apiModulesIdGet$Plain(params: {
     id: number;
 
-  }): Observable<Module> {
+  }): Observable<ModuleResponse> {
 
     return this.apiModulesIdGet$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleResponse>) => r.body as ModuleResponse)
     );
   }
 
@@ -257,7 +257,7 @@ export class ModulesService extends BaseService {
   apiModulesIdGet$Json$Response(params: {
     id: number;
 
-  }): Observable<StrictHttpResponse<Module>> {
+  }): Observable<StrictHttpResponse<ModuleResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdGetPath, 'get');
     if (params) {
@@ -271,7 +271,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleResponse>;
       })
     );
   }
@@ -285,10 +285,10 @@ export class ModulesService extends BaseService {
   apiModulesIdGet$Json(params: {
     id: number;
 
-  }): Observable<Module> {
+  }): Observable<ModuleResponse> {
 
     return this.apiModulesIdGet$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleResponse>) => r.body as ModuleResponse)
     );
   }
 
@@ -356,7 +356,7 @@ export class ModulesService extends BaseService {
   apiModulesIdDelete$Plain$Response(params: {
     id: number;
 
-  }): Observable<StrictHttpResponse<Module>> {
+  }): Observable<StrictHttpResponse<ModuleResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdDeletePath, 'delete');
     if (params) {
@@ -370,7 +370,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleResponse>;
       })
     );
   }
@@ -384,10 +384,10 @@ export class ModulesService extends BaseService {
   apiModulesIdDelete$Plain(params: {
     id: number;
 
-  }): Observable<Module> {
+  }): Observable<ModuleResponse> {
 
     return this.apiModulesIdDelete$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleResponse>) => r.body as ModuleResponse)
     );
   }
 
@@ -400,7 +400,7 @@ export class ModulesService extends BaseService {
   apiModulesIdDelete$Json$Response(params: {
     id: number;
 
-  }): Observable<StrictHttpResponse<Module>> {
+  }): Observable<StrictHttpResponse<ModuleResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdDeletePath, 'delete');
     if (params) {
@@ -414,7 +414,7 @@ export class ModulesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Module>;
+        return r as StrictHttpResponse<ModuleResponse>;
       })
     );
   }
@@ -428,10 +428,10 @@ export class ModulesService extends BaseService {
   apiModulesIdDelete$Json(params: {
     id: number;
 
-  }): Observable<Module> {
+  }): Observable<ModuleResponse> {
 
     return this.apiModulesIdDelete$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<Module>) => r.body as Module)
+      map((r: StrictHttpResponse<ModuleResponse>) => r.body as ModuleResponse)
     );
   }
 
