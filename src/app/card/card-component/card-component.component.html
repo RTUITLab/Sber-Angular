@@ -10,9 +10,11 @@
         </div>
     </div>
     <div class="create-module ">
-        <input type="button" value="Создать материал" class="create-module-input">
+        <button class="create-module-input" (click)="onClick()">Создать модуль</button>
     </div>
-    <div class="module ">
-        Тест
+    <div class="modules" *ngFor="let module of modules">
+        <div class="module">
+            <p>{{module.title}}</p>
+        </div>
     </div>
 </div>

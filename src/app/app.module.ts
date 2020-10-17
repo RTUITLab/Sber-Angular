@@ -10,6 +10,7 @@ import { CardComponentComponent } from './card/card-component/card-component.com
 import { ApiModule } from 'src/api/api.module';
 import { HttpClientModule } from '@angular/common/http';
 import { TestapiComponent } from './testapi/testapi.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { TestapiComponent } from './testapi/testapi.component';
       {path: '', component: CardComponent}
     ]),
     HttpClientModule,
-    ApiModule.forRoot({rootUrl: 'https://realityshift-sber.rtuitlab.ru'})
+    ApiModule.forRoot({rootUrl: 'https://realityshift-sber.rtuitlab.ru'}),
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

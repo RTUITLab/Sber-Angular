@@ -1,8 +1,9 @@
 .content {
     padding-left: 5%;
     padding-top: 2%;
-    padding-right: 2%;
+    padding-right: 5%;
     display: grid;
+    margin: 0;
 }
 
 .current-filter {
@@ -12,6 +13,10 @@
 
 .filter-title {
     grid-row: 1;
+}
+
+p {
+    font-size: 20px;
 }
 
 .filters-value {
@@ -28,7 +33,7 @@
 .create-module {
     grid-column: 2;
     align-self: center;
-    align-content: initial;
+    text-align: right;
 }
 
 .create-module-input {
@@ -37,8 +42,18 @@
     font-size: 20px;
 }
 
-.module {
+.modules {
     padding-top: 5%;
     grid-column-start: 1;
     grid-column-end: 3;
+    margin: 0;
+    grid-column: auto;
+}
+
+.module {
+    width: 476px;
+    height: 308px;
+    border: solid 1px #979797;
+    background-color: #d8d8d8;
+    margin: 0;
 }

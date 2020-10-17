@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Module } from 'src/api/models';
+import { ModulesService } from 'src/api/services';
 
 @Component({
   selector: 'app-card-component',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card-component.component.css']
 })
 export class CardComponentComponent implements OnInit {
+  constructor(private modulesService: ModulesService) { }
 
-  constructor() { }
+  public modules: Module[] = [];
 
-  ngOnInit(): void {
+  onClick() {
+   
+  }
+
+  async ngOnInit(): Promise<void> {
+    this.modules = await this.modulesService.apiModulesGet$Json().toPromise();
+
   }
 
 }
