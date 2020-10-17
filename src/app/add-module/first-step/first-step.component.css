@@ -12,7 +12,7 @@
     display: grid;
 }
 
-.header > span {
+.header>span {
     font-weight: 600;
 }
 
