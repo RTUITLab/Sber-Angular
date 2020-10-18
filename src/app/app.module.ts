@@ -13,15 +13,17 @@ import { TestapiComponent } from './testapi/testapi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressComponent } from './add-module/progress/progress.component';
 import { AddModuleComponent } from './add-module/add-module.component';
-import { FirstStepComponent } from './add-module/step/first-step/first-step.component';
+import { CommentDialog, FirstStepComponent } from './add-module/step/first-step/first-step.component';
 import { UserNameInterceptor } from './user-name.interceptor';
 import { UsernameComponent } from './username/username.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatDialogModule } from '@angular/material/dialog';
 import { SaveProgressComponent } from './add-module/save-progress/save-progress.component';
 import { SecondStepComponent } from './add-module/step/second-step/second-step.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
@@ -42,7 +44,8 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
     FirstStepComponent,
     UsernameComponent,
     SaveProgressComponent,
-    SecondStepComponent
+    SecondStepComponent,
+    CommentDialog
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,9 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
     MatButtonModule,
     MatSelectModule,
     MatRadioModule,
+    MatDialogModule,
     FormsModule,
+    MatInputModule,
     ReactiveFormsModule
   ],
   providers: [
