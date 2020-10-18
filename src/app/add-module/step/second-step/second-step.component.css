@@ -1,8 +1,50 @@
-.button {
+.form {
+    margin: 20px;
+    margin-top: 40px;
+}
+
+.header {
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.header>span {
+    font-weight: 600;
+}
+
+label {
+    display: block;
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.area > textarea {
+    margin: 20px 0;
+    padding: 13px;
+    font-size: 16px;
+    border: #CACACA solid 1px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+}
+
+button {
+    display: block;
     border-radius: 0;
     background-color: #6100ee;
-    position: absolute;
-    bottom: 20px;
+    margin: 20px 0;
+    color: white;
+    padding: 5px 15px;
+}
+
+button[right] {
+    margin-left: auto;
 }
 
 .icon {
