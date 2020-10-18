@@ -85,6 +85,14 @@ mat-radio-group {
     color: #FFFFFF;
 }
 
+.tag > img {
+    cursor: pointer;
+    transform: rotate(45deg);
+    height: 10px;
+    width: 10px;
+    margin-right: 10px;
+}
+
 .tags input,
 .latency input,
 .idea > textarea,

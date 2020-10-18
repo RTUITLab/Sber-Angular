@@ -74,7 +74,7 @@
             <label>Теги</label>
             <input type="text" placeholder="Добавьте теги для модуля" [(ngModel)]="tag" (keyup.enter)="onEnter($event)">
             <div class="tag" *ngFor="let t of tags">
-                <div>{{t}}</div>
+                <img src="../../../../assets/icons/plus-white.svg">{{t}}
             </div>
         </div>
         <div class="latency">
