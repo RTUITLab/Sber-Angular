@@ -56,8 +56,16 @@
         <label>Проблемный вопрос</label>
         <input type="text" required placeholder="Сложный вопрос, ответить на который будет возможно после прохождения модуля" [(ngModel)]="module.problemQuestion">
     </div>
-    <div *ngIf="id !== null; else notIdButton">
-        <button mat-button class="button" [routerLink]="['../../secondStep', id]" routerLinkActive="router-link-active"><img class="left" src="../../../assets/icons/down-arrow.svg">Перейти к следующему шагу</button>
+    <div *ngIf="id === null;else putModule">
+        <button mat-button class="button" (click)="onClickCreate()">
+            <img class="left" src="../../../assets/icons/down-arrow.svg">
+            Перейти к следующему шагу
+        </button>
     </div>
-    <ng-template #notIdButton><button mat-button class="button" routerLink="../secondStep" routerLinkActive="router-link-active"><img class="left" src="../../../assets/icons/down-arrow.svg">Перейти к следующему шагу</button></ng-template>
+    <ng-template #putModule>
+        <button mat-button class="button" (click)="onClickPut()">
+            <img class="left" src="../../../assets/icons/down-arrow.svg">
+            Перейти к следующему шагу
+        </button>
+    </ng-template>
 </div>
