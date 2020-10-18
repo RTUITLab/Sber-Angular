@@ -15,7 +15,7 @@
 
     <div class="buttons">
         <div>
-            <button mat-button [routerLink]="['../../firstStep', id]" routerLinkActive="router-link-active">Перейти к предыдущему шагу</button>
+            <button mat-button [routerLink]="['../../firstStep', id]" routerLinkActive="router-link-active" (click)="onClickBack()">Перейти к предыдущему шагу</button>
         </div>
 
         <div>

@@ -24,6 +24,10 @@ export class SecondStepComponent implements OnInit {
     this.router.navigate(['']);
   }
 
+  async onClickBack() {
+    await this.teacherService.apiModulesModuleIdTeacherInstructionsPut({moduleId: +this.id, body: this.teacher}).toPromise();
+  }
+
   async ngOnInit(): Promise<void> {
       this.id = this.route.snapshot.paramMap.get('id');
 
