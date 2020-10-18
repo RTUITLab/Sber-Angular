@@ -2,8 +2,8 @@
     <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
     <div class="area">
         <div class="commentArea">
-            <div class="comment">
-                TEXT
+            <div class="comment" *ngIf="commentMap.has('generalMeaning')">
+                {{commentMap.get('generalMeaning')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>
@@ -15,8 +15,8 @@
     </div>
     <div class="area">
         <div class="commentArea">
-            <div class="comment">
-                TEXT
+            <div class="comment" *ngIf="commentMap.has('challenges')">
+                {{commentMap.get('challenges')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>
@@ -28,8 +28,8 @@
     </div>
     <div class="area">
         <div class="commentArea">
-            <div class="comment">
-                TEXT
+            <div class="comment" *ngIf="commentMap.has('exercisesByLessons')">
+                {{commentMap.get('exercisesByLessons')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>
