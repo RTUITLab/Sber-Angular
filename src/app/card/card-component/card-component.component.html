@@ -3,9 +3,7 @@
         <div class="header">Доступные материалы</div>
         <div class="filters">
             <h4>Фильтры:</h4>
-            <h5 class="test">Фильтр 1<img src="../../../assets/icons/plus.svg"></h5>
-            <h5 class="test">Фильтр 2<img src="../../../assets/icons/plus.svg"></h5>
-            <h5 class="test">Фильтр 3<img src="../../../assets/icons/plus.svg"></h5>
+            <h5 *ngFor="let tag of tags" class="test">{{tag}}<img (click)="removeTag(tag)" src="../../../assets/icons/plus.svg"></h5>
         </div>
     </div>
     <div class="create-module ">
