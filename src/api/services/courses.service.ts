@@ -8,6 +8,7 @@ import { RequestBuilder } from '../request-builder';
 import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 
+import { CourseResponse } from '../models/course-response';
 
 @Injectable({
   providedIn: 'root',
@@ -33,7 +34,7 @@ export class CoursesService extends BaseService {
    */
   apiCoursesGet$Plain$Response(params?: {
 
-  }): Observable<StrictHttpResponse<Array<string>>> {
+  }): Observable<StrictHttpResponse<Array<CourseResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, CoursesService.ApiCoursesGetPath, 'get');
     if (params) {
@@ -46,7 +47,7 @@ export class CoursesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Array<string>>;
+        return r as StrictHttpResponse<Array<CourseResponse>>;
       })
     );
   }
@@ -59,10 +60,10 @@ export class CoursesService extends BaseService {
    */
   apiCoursesGet$Plain(params?: {
 
-  }): Observable<Array<string>> {
+  }): Observable<Array<CourseResponse>> {
 
     return this.apiCoursesGet$Plain$Response(params).pipe(
-      map((r: StrictHttpResponse<Array<string>>) => r.body as Array<string>)
+      map((r: StrictHttpResponse<Array<CourseResponse>>) => r.body as Array<CourseResponse>)
     );
   }
 
@@ -74,7 +75,7 @@ export class CoursesService extends BaseService {
    */
   apiCoursesGet$Json$Response(params?: {
 
-  }): Observable<StrictHttpResponse<Array<string>>> {
+  }): Observable<StrictHttpResponse<Array<CourseResponse>>> {
 
     const rb = new RequestBuilder(this.rootUrl, CoursesService.ApiCoursesGetPath, 'get');
     if (params) {
@@ -87,7 +88,7 @@ export class CoursesService extends BaseService {
     })).pipe(
       filter((r: any) => r instanceof HttpResponse),
       map((r: HttpResponse<any>) => {
-        return r as StrictHttpResponse<Array<string>>;
+        return r as StrictHttpResponse<Array<CourseResponse>>;
       })
     );
   }
@@ -100,10 +101,10 @@ export class CoursesService extends BaseService {
    */
   apiCoursesGet$Json(params?: {
 
-  }): Observable<Array<string>> {
+  }): Observable<Array<CourseResponse>> {
 
     return this.apiCoursesGet$Json$Response(params).pipe(
-      map((r: StrictHttpResponse<Array<string>>) => r.body as Array<string>)
+      map((r: StrictHttpResponse<Array<CourseResponse>>) => r.body as Array<CourseResponse>)
     );
   }
 

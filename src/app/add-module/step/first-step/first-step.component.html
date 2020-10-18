@@ -19,10 +19,40 @@
                 <mat-form-field appearance="fill">
                     <mat-select [(ngModel)]="class">
                         <mat-option value="1">
-                            1
+                            1-ая параллель
                         </mat-option>
                         <mat-option value="2">
-                            2
+                            2-ая параллель
+                        </mat-option>
+                        <mat-option value="3">
+                            3-ая параллель
+                        </mat-option>
+                        <mat-option value="4">
+                            4-ая параллель
+                        </mat-option>
+                        <mat-option value="5">
+                            5-ая параллель
+                        </mat-option>
+                        <mat-option value="6">
+                            6-ая параллель
+                        </mat-option>
+                        <mat-option value="7">
+                            7-ая параллель
+                        </mat-option>
+                        <mat-option value="8">
+                            8-ая параллель
+                        </mat-option>
+                        <mat-option value="9">
+                            9-ая параллель
+                        </mat-option>
+                        <mat-option value="10">
+                            10-ая параллель
+                        </mat-option>
+                        <mat-option value="11">
+                            11-ая параллель
+                        </mat-option>
+                        <mat-option value="12">
+                            12-ая параллель
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -30,9 +60,9 @@
             <div>
                 <label>Предмет</label>
                 <mat-form-field appearance="fill">
-                    <mat-select [(ngModel)]="module.course">
-                        <mat-option value="кек">
-                            "Kek"
+                    <mat-select [(ngModel)]="course">
+                        <mat-option *ngFor="let item of courses" [value]="item.id">
+                            {{item.title}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>
@@ -42,9 +72,9 @@
     <div style="grid-row: 4; display: grid; grid-template-columns: 50% 50%; width: 100%;">
         <div class="tags">
             <label>Теги</label>
-            <input type="" placeholder="Добавьте теги для модуля" [(ngModel)]="tag">
-            <div class="tag" #forTagInTags>
-                <img src="../../../../assets/icons/plus-white.svg">NPM
+            <input type="text" placeholder="Добавьте теги для модуля" [(ngModel)]="tag" (keyup.enter)="onEnter($event)">
+            <div class="tag" *ngFor="let t of tags">
+                <div>{{t}}</div>
             </div>
         </div>
         <div class="latency">

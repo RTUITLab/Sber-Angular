@@ -1,10 +1,11 @@
 /* tslint:disable */
+import { CourseResponse } from './course-response';
 import { ModuleVisibility } from './module-visibility';
 import { PartInfo } from './part-info';
 export interface ModuleResponse {
   basicIdea?: null | string;
   classLevel?: number;
-  course?: null | string;
+  course?: CourseResponse;
   creator?: null | string;
   generalPart?: PartInfo;
   id?: number;
