@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { TeacherInstructionsService } from 'src/api/services';
-import { TeacherInstructionsResponse } from 'src/api/models';
+import { TeacherInstructionsService, CommentsService } from 'src/api/services';
+import { TeacherInstructionsResponse, CommentResponse } from 'src/api/models';
 
 @Component({
   selector: 'app-second-step',
@@ -10,7 +10,8 @@ import { TeacherInstructionsResponse } from 'src/api/models';
 })
 export class SecondStepComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private teacherService: TeacherInstructionsService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private teacherService: TeacherInstructionsService,
+              private router: Router, private commentService: CommentsService) { }
 
   id: string;
   teacher: TeacherInstructionsResponse = {
@@ -18,6 +19,11 @@ export class SecondStepComponent implements OnInit {
     exercisesByLessons: '',
     generalMeaning: ''
   };
+
+// tslint:disable-next-line: new-parens
+commentMap = new Map();
+
+comments: CommentResponse[] = [];
 
   async onClickNext() {
     await this.teacherService.apiModulesModuleIdTeacherInstructionsPut({moduleId: +this.id, body: this.teacher}).toPromise();
@@ -32,7 +38,15 @@ export class SecondStepComponent implements OnInit {
       this.id = this.route.snapshot.paramMap.get('id');
 
       this.teacher = await this.teacherService.apiModulesModuleIdTeacherInstructionsGet$Json({moduleId: +this.id}).toPromise();
-  }
+
+      this.comments = await this.commentService.apiModulesModuleIdCommentsGet$Json({moduleId: +this.id}).toPromise();
+      for (let i of this.comments)
+      {
+          if (i.part === 'TeacherInstructions') {
+              this.commentMap.set(i.pathToField, i.message);
+          }
+      }
+ }
 
 
 }
