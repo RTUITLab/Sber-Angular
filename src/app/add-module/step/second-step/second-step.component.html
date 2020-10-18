@@ -3,10 +3,10 @@
     <div class="area">
         <div class="commentArea" *ngIf="commentMap.has('generalMeaning')">
             <div class="comment">
-                {{commentMap.get('generalMeaning')}}
+                {{commentMap.get('generalMeaning').message}}
             </div>
             <div id="buttons">
-                <button comment matButton>Исправлено</button>
+                <button comment matButton (click)="doneComment(commentMap.get('generalMeaning'))">Исправлено</button>
                 <button comment gray matButton>Не согласен</button>
             </div>
         </div>
@@ -16,10 +16,10 @@
     <div class="area">
         <div class="commentArea" *ngIf="commentMap.has('challenges')">
             <div class="comment">
-                {{commentMap.get('challenges')}}
+                {{commentMap.get('challenges').message}}
             </div>
             <div id="buttons">
-                <button comment matButton>Исправлено</button>
+                <button comment matButton (click)="doneComment(commentMap.get('challenges'))">Исправлено</button>
                 <button comment gray matButton>Не согласен</button>
             </div>
         </div>
@@ -29,10 +29,10 @@
     <div class="area">
         <div class="commentArea" *ngIf="commentMap.has('exercisesByLessons')">
             <div class="comment">
-                {{commentMap.get('exercisesByLessons')}}
+                {{commentMap.get('exercisesByLessons').message}}
             </div>
             <div id="buttons">
-                <button comment matButton>Исправлено</button>
+                <button comment matButton (click)="doneComment(commentMap.get('exercisesByLessons'))">Исправлено</button>
                 <button comment gray matButton>Не согласен</button>
             </div>
         </div>

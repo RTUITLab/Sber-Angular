@@ -34,6 +34,11 @@ comments: CommentResponse[] = [];
     await this.teacherService.apiModulesModuleIdTeacherInstructionsPut({moduleId: +this.id, body: this.teacher}).toPromise();
   }
 
+  async doneComment(comment: CommentResponse) {
+    await this.commentService.apiModulesModuleIdCommentsIdDonePost$Json({moduleId: +this.id, id: comment.id}).toPromise();
+    this.commentMap.delete(comment.pathToField);
+  }
+
   async ngOnInit(): Promise<void> {
       this.id = this.route.snapshot.paramMap.get('id');
 
@@ -43,7 +48,7 @@ comments: CommentResponse[] = [];
       for (let i of this.comments)
       {
           if (i.part === 'TeacherInstructions') {
-              this.commentMap.set(i.pathToField, i.message);
+              this.commentMap.set(i.pathToField, i);
           }
       }
  }

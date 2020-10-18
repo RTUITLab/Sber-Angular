@@ -85,7 +85,7 @@ label {
 .panel {
     width: 100%;
     font-family: HelveticaNeueCyr;
-    color: #FFF;
+    color: #FFF !important;
 }
 
 ::ng-deep .mat-form-field-hide-placeholder .mat-select-placeholder {
