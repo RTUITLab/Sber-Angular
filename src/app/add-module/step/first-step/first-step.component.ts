@@ -66,7 +66,7 @@ modelR: ModuleCompactResponse;
           for(let i of this.comments)
           {
             if(i.part === 'General') {
-              this.commentMap.set(i.pathToField, i.message);
+              this.commentMap.set(i.pathToField, i);
             }
           }
         }
@@ -92,6 +92,11 @@ modelR: ModuleCompactResponse;
 
   deleteTag(t: string) {
     this.tags.splice(this.tags.indexOf(t), 1);
+  }
+
+  async doneComment(comment: CommentResponse) {
+    await this.commentService.apiModulesModuleIdCommentsIdDonePost$Json({moduleId: +this.id, id: comment.id}).toPromise();
+    this.commentMap.delete(comment.pathToField);
   }
 
   async onClickCreate() {
