@@ -29,6 +29,8 @@ time: string;
 visibility: string;
 id: string;
 
+tags: string[] = [];
+
 fullModel: ModuleResponse;
 
 modelR: ModuleCompactResponse;
@@ -41,10 +43,17 @@ modelR: ModuleCompactResponse;
         this.fullModel = await this.modulesService.apiModulesIdGet$Json({id: +(this.id)}).toPromise();
         console.log(this.fullModel);
         this.module = this.fullModel;
+        this.tags = this.module.tags;
         this.class = this.fullModel.classLevel.toString();
         this.visibility = this.fullModel.visibility.toString();
         this.time = this.fullModel.laborIntensity.toString();
       }
+  }
+
+  onEnter(event) {
+    console.log(event.target.value);
+    this.tags.push(event.target.value);
+    this.tag = null;
   }
 
   async onClickPut() {
@@ -52,7 +61,7 @@ modelR: ModuleCompactResponse;
     this.module.classLevel = +this.class;
     this.module.laborIntensity = +this.time;
     this.module.visibility = ModuleVisibility[this.visibility];
-    this.module.tags.push(this.tag);
+    this.module.tags = this.tags;
     await this.modulesService.apiModulesIdPut( {id: +(this.id),
       body: this.module
     }).toPromise();
@@ -64,7 +73,7 @@ modelR: ModuleCompactResponse;
     this.module.classLevel = +this.class;
     this.module.laborIntensity = +this.time;
     this.module.visibility = ModuleVisibility[this.visibility];
-    this.module.tags.push(this.tag);
+    this.module.tags = this.tags;
     this.modelR = await this.modulesService.apiModulesPost$Json( {
       body: this.module
     }).toPromise();
