@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { ModuleResponse } from 'src/api/models';
+import { ModuleCompactResponse, ModuleStatus } from 'src/api/models';
 import { ModulesService } from 'src/api/services';
 
 
@@ -12,13 +12,12 @@ import { ModulesService } from 'src/api/services';
 export class CardComponentComponent implements OnInit {
   constructor(private modulesService: ModulesService) { }
 
-  public modules: ModuleResponse[] = [];
+  public modules: ModuleCompactResponse[] = [];
   
   onClick() {
-   
   }
 
-  getDate(module: ModuleResponse): string {
+  getDate(module: ModuleCompactResponse): string {
     const t = moment(module.lastEditTime);
     t.locale('ru');
     return t.startOf('second').fromNow();
@@ -26,7 +25,43 @@ export class CardComponentComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.modules = await this.modulesService.apiModulesGet$Json().toPromise();
+  }
+
+
+
+  getStatus(status: ModuleStatus): string {
+    switch (status) {
+      case ModuleStatus.MakingCorrection:
+        
+        return 'Внести правки';
     
+      case ModuleStatus.MaterialsChecking:
+        return 'Материал проверяется';
+      case ModuleStatus.MaterialsNotComplete:
+        return 'Незавершенный материал';
+      case ModuleStatus.MaterialsReady:
+        return 'Готовый материал';
+      default:
+        return '';
+    }
+  }
+
+
+  getColor(status: ModuleStatus) {
+    switch (status) {
+      case ModuleStatus.MakingCorrection:
+        
+        return '#FF0000';
+    
+      case ModuleStatus.MaterialsChecking:
+        return '#FFE000';
+      case ModuleStatus.MaterialsNotComplete:
+        return '#00A4FF';
+      case ModuleStatus.MaterialsReady:
+        return '#00FF05';
+      default:
+        return 'white';
+    }
   }
 
   public getBackground() {

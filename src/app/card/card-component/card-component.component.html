@@ -14,7 +14,8 @@
     <div class="modules">
         <div class="module" [attr.grad]="getBackground()" *ngFor="let module of modules" [routerLink]="['create/firstStep', module.id]" routerLinkActive="router-link-active">
             <div class="top">
-                <div class="status"><div class="circle"></div>Статус</div>
+                <div class="status">
+                    <div class="circle" [style.background-color]="getColor(module.status)"></div>{{getStatus(module.status)}}</div>
                 <div class="last">Последнее редактирование:</div>
                 <div class="last">{{getDate(module)}}</div>
                 <div class="image">
