@@ -1,6 +1,6 @@
 <div class="header"> Мои модули</div>
 <div class="search">
-    <input type="text" class="search-input" placeholder="Поиск">
+    <input type="text" class="search-input" placeholder="Поиск" [(ngModel)]="title" (input)=titleChanged($event.target.value)>
     <img src="../../../assets/icons/searching.svg">
 </div>
 <div>
@@ -15,25 +15,60 @@
     <div>
         <mat-form-field  appearance="fill">
             <mat-label>Предмет</mat-label>
-            <mat-select matNativeControl>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
+            <mat-select matNativeControl [(ngModel)]="course" (ngModelChange)="courseChanged($event)" >
+                <mat-option [value]="null">Сбросить</mat-option>
+                <mat-option *ngFor="let course of courses" [value]="course.id">
+                    {{course.title}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Класс</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
+            <mat-select [(ngModel)]="class" (ngModelChange)="classChanged($event)">
+                <mat-option [value]="null">Сбросить</mat-option>
+                <mat-option [value]="1">
+                    1-ая параллель
+                </mat-option>
+                <mat-option [value]="2">
+                    2-ая параллель
+                </mat-option>
+                <mat-option [value]="3">
+                    3-ая параллель
+                </mat-option>
+                <mat-option [value]="4">
+                    4-ая параллель
+                </mat-option>
+                <mat-option [value]="5">
+                    5-ая параллель
+                </mat-option>
+                <mat-option [value]="6">
+                    6-ая параллель
+                </mat-option>
+                <mat-option [value]="7">
+                    7-ая параллель
+                </mat-option>
+                <mat-option [value]="8">
+                    8-ая параллель
+                </mat-option>
+                <mat-option [value]="9">
+                    9-ая параллель
+                </mat-option>
+                <mat-option [value]="10">
+                    10-ая параллель
+                </mat-option>
+                <mat-option [value]="11">
+                    11-ая параллель
+                </mat-option>
+                <mat-option [value]="12">
+                    12-ая параллель
                 </mat-option>
             </mat-select>
         </mat-form-field>
         <mat-form-field appearance="fill">
             <mat-label>Тег</mat-label>
-            <mat-select>
-                <mat-option *ngFor="let food of foods" [value]="food.value">
-                    {{food.viewValue}}
+            <mat-select [(ngModel)]="tag" (ngModelChange)="tagChanged($event)">
+                <mat-option *ngFor="let tag of availableTags()" [value]="tag">
+                    {{tag}}
                 </mat-option>
             </mat-select>
         </mat-form-field>

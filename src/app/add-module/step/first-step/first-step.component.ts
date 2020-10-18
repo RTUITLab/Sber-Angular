@@ -55,7 +55,6 @@ modelR: ModuleCompactResponse;
         this.time = this.fullModel.laborIntensity.toString();
       }
   }
-
   onEnter(event) {
     this.tags.push(event.target.value);
     this.tag = null;
