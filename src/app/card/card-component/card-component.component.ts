@@ -12,7 +12,7 @@ import { ModulesService } from 'src/api/services';
 export class CardComponentComponent implements OnInit {
   constructor(private modulesService: ModulesService) { }
 
-  public modules: ModuleResponse[] = [];
+  public modules: ModuleCompactResponse[] = [];
   public gradients: Array<number> = [];
   
   onClick() {
