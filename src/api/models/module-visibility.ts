@@ -1,6 +1,6 @@
 /* tslint:disable */
 export enum ModuleVisibility {
-  $0 = 0,
-  $1 = 1,
-  $2 = 2
+  School = 'School',
+  Personal = 'Personal',
+  Global = 'Global'
 }

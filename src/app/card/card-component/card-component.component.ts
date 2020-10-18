@@ -29,4 +29,7 @@ export class CardComponentComponent implements OnInit {
     
   }
 
+  public getBackground() {
+    return Math.floor(Math.random() * Math.floor(3));
+  }
 }
