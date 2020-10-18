@@ -73,6 +73,10 @@ modelR: ModuleCompactResponse;
     this.router.navigate(['../secondStep/', this.id], { relativeTo: this.route});
   }
 
+  deleteTag(t: string) {
+    this.tags.splice(this.tags.indexOf(t), 1);
+  }
+
   async onClickCreate() {
     console.log(this.module);
     this.module.classLevel = +this.class;
