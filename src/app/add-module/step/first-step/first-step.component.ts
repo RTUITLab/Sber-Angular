@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CreateEditModuleRequest } from 'src/api/models';
 import { ModulesService } from 'src/api/services';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ModuleVisibility } from 'src/api/models/module-visibility';
 
 @Component({
@@ -19,15 +20,16 @@ export class FirstStepComponent implements OnInit {
     title: '',
     visibility: ModuleVisibility.School
   };
-  constructor(private modulesService: ModulesService) { }
+  constructor(private route: ActivatedRoute, private modulesService: ModulesService) { }
 
 tag: string;
 class: string;
 time: string;
 visibility: string;
+id: string;
 
   ngOnInit(): void {
-    
+      this.id = this.route.snapshot.paramMap.get('id');
   }
 
   async onClick() {

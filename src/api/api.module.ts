@@ -3,6 +3,7 @@ import { NgModule, ModuleWithProviders, SkipSelf, Optional } from '@angular/core
 import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
+import { CommentsService } from './services/comments.service';
 import { ModulesService } from './services/modules.service';
 import { TagsService } from './services/tags.service';
 import { TeacherInstructionsService } from './services/teacher-instructions.service';
@@ -15,6 +16,7 @@ import { TeacherInstructionsService } from './services/teacher-instructions.serv
   exports: [],
   declarations: [],
   providers: [
+    CommentsService,
     ModulesService,
     TagsService,
     TeacherInstructionsService,

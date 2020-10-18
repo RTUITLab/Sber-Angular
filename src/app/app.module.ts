@@ -13,13 +13,15 @@ import { TestapiComponent } from './testapi/testapi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressComponent } from './add-module/progress/progress.component';
 import { AddModuleComponent } from './add-module/add-module.component';
-import { FirstStepComponent } from './add-module/first-step/first-step.component';
+import { FirstStepComponent } from './add-module/step/first-step/first-step.component';
 import { UserNameInterceptor } from './user-name.interceptor';
 import { UsernameComponent } from './username/username.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
+import { SaveProgressComponent } from './add-module/save-progress/save-progress.component';
+import { SecondStepComponent } from './add-module/step/second-step/second-step.component';
 
 
 export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
@@ -38,7 +40,9 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
     ProgressComponent,
     AddModuleComponent,
     FirstStepComponent,
-    UsernameComponent
+    UsernameComponent,
+    SaveProgressComponent,
+    SecondStepComponent
   ],
   imports: [
     BrowserModule,
@@ -47,12 +51,20 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
         {
           path: 'firstStep', // child route path
           component: FirstStepComponent, // child route component that the router renders
+        },
+        {
+          path: 'secondStep', // child route path
+          component: SecondStepComponent, // child route component that the router renders
         }
       ]},
       {path: 'create', component: AddModuleComponent, children: [
         {
           path: 'firstStep/:id', // child route path
           component: FirstStepComponent, // child route component that the router renders
+        },
+        {
+          path: 'secondStep/:id', // child route path
+          component: SecondStepComponent, // child route component that the router renders
         }
       ]},
       { path: '', component: CardComponent },
