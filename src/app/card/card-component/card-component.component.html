@@ -12,7 +12,7 @@
         <button class="create-module-input" routerLink="create/firstStep" (click)="onClick()">Создать модуль<img src="../../../assets/icons/plus-white.svg"></button>
     </div>
     <div class="modules">
-        <div #module class="module" [attr.grad]="getBackground(module)" *ngFor="let module of modules" [routerLink]="['create/firstStep', module.id]" routerLinkActive="router-link-active">
+        <div class="module" [attr.grad]="getBackground(i)" *ngFor="let module of modules; index as i" [routerLink]="['create/firstStep', module.id]" routerLinkActive="router-link-active">
             <div class="top">
                 <div class="status">
                     <div class="circle" [style.background-color]="getColor(module.status)"></div>{{getStatus(module.status)}}</div>

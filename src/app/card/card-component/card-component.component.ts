@@ -12,8 +12,8 @@ import { ModulesService } from 'src/api/services';
 export class CardComponentComponent implements OnInit {
   constructor(private modulesService: ModulesService) { }
 
-  public modules: ModuleCompactResponse[] = [];
-  public gradient: Array<number> = [];
+  public modules: ModuleResponse[] = [];
+  public gradients: Array<number> = [];
   
   onClick() {
   }
@@ -27,7 +27,7 @@ export class CardComponentComponent implements OnInit {
   async ngOnInit(): Promise<void> {
     this.modules = await this.modulesService.apiModulesGet$Json().toPromise();
     this.modules.forEach(() => {
-      this.gradient.push(Math.floor(Math.random() * Math.floor(3)));
+      this.gradients.push(Math.floor(Math.random() * Math.floor(3)));
     })
   }
 
@@ -69,6 +69,7 @@ export class CardComponentComponent implements OnInit {
   }
 
   public getBackground(e) {
-    return e.attr('grad') || Math.floor(Math.random() * Math.floor(3));
+    console.log(e);
+    return this.gradients[e];
   }
 }
