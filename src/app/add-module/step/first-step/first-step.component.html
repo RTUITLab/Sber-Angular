@@ -3,10 +3,10 @@
     <div style="grid-row: 2;" class="name">
         <div class="commentArea" *ngIf="isChecked && commentMap.has('name')">
             <div class="comment">
-                {{commentMap.get('name')}}
+                {{commentMap.get('name').message}}
             </div>
             <div id="buttons">
-                <button matButton>Исправлено</button>
+                <button matButton (click)="doneComment(commentMap.get('name'))">Исправлено</button>
                 <button gray matButton>Не согласен</button>
             </div>
         </div>
@@ -16,10 +16,10 @@
     <div style="grid-row: 3;" class="general">
         <div class="commentArea" *ngIf="isChecked && commentMap.has('general')">
             <div class="comment">
-                {{commentMap.get('general')}}
+                {{commentMap.get('general').message}}
             </div>
             <div id="buttons">
-                <button matButton>Исправлено</button>
+                <button matButton (click)="doneComment(commentMap.get('general'))">Исправлено</button>
                 <button gray matButton>Не согласен</button>
             </div>
         </div>
@@ -90,10 +90,10 @@
     <div style="grid-row: 4; display: grid; grid-template-columns: 50% 50%; width: 100%;">
         <div class="commentArea" *ngIf="isChecked && commentMap.has('tags')">
             <div class="comment">
-                {{commentMap.get('tags')}}
+                {{commentMap.get('tags').message}}
             </div>
             <div id="buttons">
-                <button matButton>Исправлено</button>
+                <button matButton (click)="doneComment(commentMap.get('tags'))">Исправлено</button>
                 <button gray matButton>Не согласен</button>
             </div>
         </div>
@@ -112,10 +112,10 @@
     <div class="idea">
         <div class="commentArea" *ngIf="isChecked && commentMap.has('idea')">
             <div class="comment">
-                {{commentMap.get('idea')}}
+                {{commentMap.get('idea').message}}
             </div>
             <div id="buttons">
-                <button matButton>Исправлено</button>
+                <button matButton (click)="doneComment(commentMap.get('idea'))">Исправлено</button>
                 <button gray matButton>Не согласен</button>
             </div>
         </div>
@@ -125,10 +125,10 @@
     <div class="problem">
         <div class="commentArea" *ngIf="isChecked && commentMap.has('problem')">
             <div class="comment">
-                {{commentMap.get('problem')}}
+                {{commentMap.get('problem').message}}
             </div>
             <div id="buttons">
-                <button matButton>Исправлено</button>
+                <button matButton (click)="doneComment(commentMap.get('problem'))">Исправлено</button>
                 <button gray matButton>Не согласен</button>
             </div>
         </div>
