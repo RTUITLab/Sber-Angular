@@ -77,6 +77,7 @@ mat-radio-group {
 .tag {
     display: inline-block;
     width: max-content;
+    margin-right: 8px;
     padding: 5px 10px;
     border-radius: 8px;
     background-color: #628dff;
