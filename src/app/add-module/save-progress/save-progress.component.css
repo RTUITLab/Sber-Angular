@@ -4,13 +4,13 @@
 
 button {
     border-radius: 0;
-    background-color: #6100ee;
+    background-color: #6100ee !important;
     margin: 20px 0;
     color: white;
     padding: 5px 15px;
 }
 
-button > img {
+img {
     vertical-align: middle;
     margin: 0 10px;
     width: 22px;
