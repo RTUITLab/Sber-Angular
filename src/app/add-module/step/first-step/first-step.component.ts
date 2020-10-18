@@ -3,7 +3,7 @@ import { CreateEditModuleRequest, ModuleCompactResponse, ModuleResponse, CourseR
 import { ModulesService, CoursesService, CommentsService } from 'src/api/services';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ModuleVisibility } from 'src/api/models/module-visibility';
-import { Observable } from 'rxjs';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-first-step',
@@ -22,8 +22,13 @@ export class FirstStepComponent implements OnInit {
     visibility: ModuleVisibility.School
   };
   // tslint:disable-next-line: max-line-length
-  constructor(private route: ActivatedRoute, private modulesService: ModulesService, private router: Router,
-              private courseService: CoursesService, private commentService: CommentsService) { }
+  constructor(
+    private route: ActivatedRoute, 
+    private modulesService: ModulesService, 
+    private router: Router,
+    private courseService: CoursesService, 
+    private commentService: CommentsService,
+    public dialog: MatDialog) { }
 
 tag: string;
 class: string;
@@ -111,5 +116,25 @@ modelR: ModuleCompactResponse;
     }).toPromise();
     this.router.navigate(['../secondStep/', this.modelR.id], { relativeTo: this.route});
   }
+  openDialog(comment: CommentResponse) {
+    const dialogRef = this.dialog.open(CommentDialog, {maxWidth: 500, minHeight: 500});
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      if (result) {
+        this.commentService.apiModulesModuleIdCommentsIdDonePost$Json({
+          moduleId: +this.id,
+          id: comment.id
+        }).subscribe(r => this.commentMap.delete(comment.pathToField));
+      }
+    });
+  }
 
 }
+
+
+@Component({
+  selector: 'comment-dialog',
+  templateUrl: '../CommentDialog.html',
+})
+export class CommentDialog {}
