@@ -133,3 +133,11 @@
     height: 20px;
     vertical-align: middle;
 }
+
+.tree {
+    width: 200%;
+    position: relative;
+    left: -100%;
+    bottom: 20%;
+    z-index: -1;
+}

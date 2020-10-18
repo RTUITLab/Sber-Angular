@@ -70,6 +70,9 @@ label {
     border-radius: 0;
     background-color: #6100ee;
     color: #FFFFFF;
+    padding: 15px 30px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 .mat-button {
@@ -78,7 +81,8 @@ label {
 
 .left {
     transform: rotate(90deg);
-    height: 20px;
+    height: 15px;
+    margin-bottom: 3px;
     vertical-align: middle;
 }
 
@@ -90,4 +94,12 @@ label {
 
 ::ng-deep .mat-form-field-hide-placeholder .mat-select-placeholder {
     color: #FFFFFF !important;
+}
+
+.tree {
+    width: 200%;
+    position: relative;
+    left: -100%;
+    top: -250px;
+    z-index: -1;
 }
