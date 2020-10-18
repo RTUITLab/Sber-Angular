@@ -47,7 +47,7 @@ comments: CommentResponse[] = [];
       this.comments = await this.commentService.apiModulesModuleIdCommentsGet$Json({moduleId: +this.id}).toPromise();
       for (let i of this.comments)
       {
-          if (i.part === 'TeacherInstructions') {
+          if (i.part === 'TeacherInstructions' && i.status !== "Done") {
               this.commentMap.set(i.pathToField, i);
           }
       }

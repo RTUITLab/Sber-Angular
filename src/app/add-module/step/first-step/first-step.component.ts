@@ -70,7 +70,7 @@ modelR: ModuleCompactResponse;
           this.comments = await this.commentService.apiModulesModuleIdCommentsGet$Json({moduleId: +this.id}).toPromise();
           for(let i of this.comments)
           {
-            if(i.part === 'General') {
+            if(i.part === 'General' && i.status !== "Done") {
               this.commentMap.set(i.pathToField, i);
             }
           }
