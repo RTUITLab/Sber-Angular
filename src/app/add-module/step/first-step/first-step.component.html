@@ -1,9 +1,9 @@
 <div class="form">
     <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
     <div style="grid-row: 2;" class="name">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="isChecked && commentMap.has('name')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('name')}}
             </div>
             <div id="buttons">
                 <button matButton>Исправлено</button>
@@ -14,9 +14,9 @@
         <input type="text" required placeholder="Введите название модуля" [(ngModel)]="module.title">
     </div>
     <div style="grid-row: 3;" class="general">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="isChecked && commentMap.has('general')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('general')}}
             </div>
             <div id="buttons">
                 <button matButton>Исправлено</button>
@@ -88,9 +88,9 @@
         </div>
     </div>
     <div style="grid-row: 4; display: grid; grid-template-columns: 50% 50%; width: 100%;">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="isChecked && commentMap.has('tags')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('tags')}}
             </div>
             <div id="buttons">
                 <button matButton>Исправлено</button>
@@ -110,9 +110,9 @@
         </div>
     </div>
     <div class="idea">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="isChecked && commentMap.has('idea')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('idea')}}
             </div>
             <div id="buttons">
                 <button matButton>Исправлено</button>
@@ -123,9 +123,9 @@
         <textarea matInput required [(ngModel)]="module.basicIdea">Главная мысль, в понимание которой вносит вклад этот модуль</textarea>
     </div>
     <div class="problem">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="isChecked && commentMap.has('problem')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('problem')}}
             </div>
             <div id="buttons">
                 <button matButton>Исправлено</button>
