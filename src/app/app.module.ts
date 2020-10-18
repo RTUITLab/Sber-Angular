@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { forwardRef, NgModule, Provider } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { LeftTabMenuComponent } from './card/left-tab-menu/left-tab-menu.component';
 import { CardComponent } from './card/card.component';
@@ -12,12 +12,16 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TestapiComponent } from './testapi/testapi.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ProgressComponent } from './add-module/progress/progress.component';
-import { MatButtonModule } from '@angular/material/button';
 import { AddModuleComponent } from './add-module/add-module.component';
-import { FirstStepComponent } from './add-module/first-step/first-step.component';
-import { MatSelectModule } from '@angular/material/select';
+import { FirstStepComponent } from './add-module/step/first-step/first-step.component';
 import { UserNameInterceptor } from './user-name.interceptor';
 import { UsernameComponent } from './username/username.component';
+
+import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { SaveProgressComponent } from './add-module/save-progress/save-progress.component';
+import { SecondStepComponent } from './add-module/step/second-step/second-step.component';
 
 
 export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
@@ -36,7 +40,9 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
     ProgressComponent,
     AddModuleComponent,
     FirstStepComponent,
-    UsernameComponent
+    UsernameComponent,
+    SaveProgressComponent,
+    SecondStepComponent
   ],
   imports: [
     BrowserModule,
@@ -45,12 +51,20 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
         {
           path: 'firstStep', // child route path
           component: FirstStepComponent, // child route component that the router renders
+        },
+        {
+          path: 'secondStep', // child route path
+          component: SecondStepComponent, // child route component that the router renders
         }
       ]},
       {path: 'create', component: AddModuleComponent, children: [
         {
           path: 'firstStep/:id', // child route path
           component: FirstStepComponent, // child route component that the router renders
+        },
+        {
+          path: 'secondStep/:id', // child route path
+          component: SecondStepComponent, // child route component that the router renders
         }
       ]},
       { path: '', component: CardComponent },
@@ -60,7 +74,10 @@ export const USERNAME_INTERCEPTOR_PROVIDER: Provider = {
     ApiModule.forRoot({ rootUrl: 'https://realityshift-sber.rtuitlab.ru' }),
     BrowserAnimationsModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatRadioModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     UserNameInterceptor,

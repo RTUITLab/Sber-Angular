@@ -122,12 +122,14 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Plain$Response(params?: {
+    UserName?: null | string;
       body?: CreateEditModuleRequest
   }): Observable<StrictHttpResponse<ModuleCompactResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesPostPath, 'post');
     if (params) {
 
+      rb.header('UserName', params.UserName, {});
 
       rb.body(params.body, 'application/*+json');
     }
@@ -149,6 +151,7 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Plain(params?: {
+    UserName?: null | string;
       body?: CreateEditModuleRequest
   }): Observable<ModuleCompactResponse> {
 
@@ -164,12 +167,14 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Json$Response(params?: {
+    UserName?: null | string;
       body?: CreateEditModuleRequest
   }): Observable<StrictHttpResponse<ModuleCompactResponse>> {
 
     const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesPostPath, 'post');
     if (params) {
 
+      rb.header('UserName', params.UserName, {});
 
       rb.body(params.body, 'application/*+json');
     }
@@ -191,6 +196,7 @@ export class ModulesService extends BaseService {
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
   apiModulesPost$Json(params?: {
+    UserName?: null | string;
       body?: CreateEditModuleRequest
   }): Observable<ModuleCompactResponse> {
 

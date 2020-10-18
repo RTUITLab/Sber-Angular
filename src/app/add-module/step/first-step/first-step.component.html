@@ -1,0 +1,63 @@
+<div class="form">
+    <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
+    <div style="grid-row: 2;" class="name">
+        <label>Название</label>
+        <input type="text" required placeholder="Введите название модуля" [(ngModel)]="module.title">
+    </div>
+    <div style="grid-row: 3;" class="general">
+        <div class="levels">
+            <label>Уровень видимости</label>
+            <mat-radio-group aria-label="Уровень видимости" [(ngModel)]="visibility">
+                <mat-radio-button value="School">Школьный</mat-radio-button>
+                <mat-radio-button value="Personal">Персональный</mat-radio-button>
+                <mat-radio-button value="Global">Глобальный</mat-radio-button>
+            </mat-radio-group>
+            <div>
+                <label>Теги</label>
+                <input type="" placeholder="Добавьте теги для модуля" [(ngModel)]="tag">
+            </div>
+        </div>
+        <div class="info">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Класс</mat-label>
+                    <mat-select [(ngModel)]="class">
+                        <mat-option value="1">
+                            1
+                        </mat-option>
+                        <mat-option value="2">
+                            2
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label>Предмет</mat-label>
+                    <mat-select [(ngModel)]="module.course">
+                        <mat-option value="кек">
+                            "Kek"
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div>
+                <label>Трудоемкость</label>
+                <input type="" placeholder="Сколько времени затратит ученик" [(ngModel)]="time">
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <label>Базовая идея</label>
+        <input type="text" required placeholder="Главная мысль, в понимание которой вносит вклад этот модуль" [(ngModel)]="module.basicIdea">
+    </div>
+    <div>
+        <label>Проблемный вопрос</label>
+        <input type="text" required placeholder="Сложный вопрос, ответить на который будет возможно после прохождения модуля" [(ngModel)]="module.problemQuestion">
+    </div>
+    <div *ngIf="id !== null; else notIdButton">
+        <button mat-button class="button" [routerLink]="['../../secondStep', id]" routerLinkActive="router-link-active"><img class="left" src="../../../assets/icons/down-arrow.svg">Перейти к следующему шагу</button>
+    </div>
+    <ng-template #notIdButton><button mat-button class="button" routerLink="../secondStep" routerLinkActive="router-link-active"><img class="left" src="../../../assets/icons/down-arrow.svg">Перейти к следующему шагу</button></ng-template>
+</div>
