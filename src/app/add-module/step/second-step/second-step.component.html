@@ -1,9 +1,9 @@
 <div class="form">
     <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
     <div class="area">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="commentMap.has('generalMeaning')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('generalMeaning')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>
@@ -14,9 +14,9 @@
         <textarea required [(ngModel)]="teacher.generalMeaning"></textarea>
     </div>
     <div class="area">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="commentMap.has('challenges')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('challenges')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>
@@ -27,9 +27,9 @@
         <textarea required [(ngModel)]="teacher.challenges"></textarea>
     </div>
     <div class="area">
-        <div class="commentArea">
+        <div class="commentArea" *ngIf="commentMap.has('exercisesByLessons')">
             <div class="comment">
-                TEXT
+                {{commentMap.get('exercisesByLessons')}}
             </div>
             <div id="buttons">
                 <button comment matButton>Исправлено</button>

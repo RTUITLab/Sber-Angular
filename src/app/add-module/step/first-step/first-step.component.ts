@@ -72,7 +72,6 @@ modelR: ModuleCompactResponse;
         }
       }
   }
-
   onEnter(event) {
     this.tags.push(event.target.value);
     this.tag = null;
