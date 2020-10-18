@@ -21,7 +21,7 @@ export class CardComponentComponent implements OnInit {
   getDate(module: ModuleResponse): string {
     const t = moment(module.lastEditTime);
     t.locale('ru');
-    return t.startOf('hour').fromNow();
+    return t.startOf('second').fromNow();
   }
 
   async ngOnInit(): Promise<void> {
