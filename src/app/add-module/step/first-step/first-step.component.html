@@ -12,15 +12,11 @@
                 <mat-radio-button value="Personal">Персональный</mat-radio-button>
                 <mat-radio-button value="Global">Глобальный</mat-radio-button>
             </mat-radio-group>
-            <div>
-                <label>Теги</label>
-                <input type="" placeholder="Добавьте теги для модуля" [(ngModel)]="tag">
-            </div>
         </div>
         <div class="info">
             <div>
+                <label>Класс</label>
                 <mat-form-field appearance="fill">
-                    <mat-label>Класс</mat-label>
                     <mat-select [(ngModel)]="class">
                         <mat-option value="1">
                             1
@@ -32,8 +28,8 @@
                 </mat-form-field>
             </div>
             <div>
+                <label>Предмет</label>
                 <mat-form-field appearance="fill">
-                    <mat-label>Предмет</mat-label>
                     <mat-select [(ngModel)]="module.course">
                         <mat-option value="кек">
                             "Kek"
@@ -41,31 +37,39 @@
                     </mat-select>
                 </mat-form-field>
             </div>
-            <div>
-                <label>Трудоемкость</label>
-                <input type="" placeholder="Сколько времени затратит ученик" [(ngModel)]="time">
+        </div>
+    </div>
+    <div style="grid-row: 4; display: grid; grid-template-columns: 50% 50%; width: 100%;">
+        <div class="tags">
+            <label>Теги</label>
+            <input type="" placeholder="Добавьте теги для модуля" [(ngModel)]="tag">
+            <div class="tag" #forTagInTags>
+                <div>NAG</div>
             </div>
         </div>
-
+        <div class="latency">
+            <label>Трудоемкость</label>
+            <input type="" placeholder="Сколько времени затратит ученик" [(ngModel)]="time">
+        </div>
     </div>
-    <div>
+    <div class="idea">
         <label>Базовая идея</label>
-        <input type="text" required placeholder="Главная мысль, в понимание которой вносит вклад этот модуль" [(ngModel)]="module.basicIdea">
+        <textarea matInput required [(ngModel)]="module.basicIdea">Главная мысль, в понимание которой вносит вклад этот модуль</textarea>
     </div>
-    <div>
+    <div class="problem">
         <label>Проблемный вопрос</label>
-        <input type="text" required placeholder="Сложный вопрос, ответить на который будет возможно после прохождения модуля" [(ngModel)]="module.problemQuestion">
+        <textarea required [(ngModel)]="module.problemQuestion">Сложный вопрос, ответить на который будет возможно после прохождения модуля</textarea>
     </div>
     <div *ngIf="id === null;else putModule">
         <button mat-button class="button" (click)="onClickCreate()">
-            <img class="left" src="../../../assets/icons/down-arrow.svg">
             Перейти к следующему шагу
+            <img class="right" src="../../../assets/icons/down-arrow.svg">
         </button>
     </div>
     <ng-template #putModule>
         <button mat-button class="button" (click)="onClickPut()">
-            <img class="left" src="../../../assets/icons/down-arrow.svg">
             Перейти к следующему шагу
+            <img class="right" src="../../../assets/icons/down-arrow.svg">
         </button>
     </ng-template>
 </div>

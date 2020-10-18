@@ -73,7 +73,7 @@
     width: 0px;
     border-left: 3px dotted #FFFFFF;
     left: 48px;
-    top: 100px;
+    top: 130px;
 }
 
 .submenu {
@@ -116,6 +116,7 @@
     border-radius: 0;
     background-color: #6100ee;
     position: absolute;
+    padding: 5px 15px;
     bottom: 20px;
 }
 
