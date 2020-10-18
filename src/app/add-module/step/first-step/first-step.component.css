@@ -131,6 +131,10 @@ button[gray] {
     background-color: #CECECE;
 }
 
+::ng-deep textarea {
+    font-family: HelveticaNeueCyr;
+}
+
 .tags {
     grid-column: 1;
     width: 100%;

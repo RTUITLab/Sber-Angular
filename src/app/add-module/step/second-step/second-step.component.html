@@ -1,14 +1,41 @@
 <div class="form">
     <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
     <div class="area">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button comment matButton>Исправлено</button>
+                <button comment gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Общий замысел модуля</label>
         <textarea required [(ngModel)]="teacher.generalMeaning"></textarea>
     </div>
     <div class="area">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button comment matButton>Исправлено</button>
+                <button comment gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Типовое распределение заданий по урокам</label>
         <textarea required [(ngModel)]="teacher.challenges"></textarea>
     </div>
     <div class="area">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button comment matButton>Исправлено</button>
+                <button comment gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Возможные трудности, ложные представления и способы их преодоления</label>
         <textarea required placeholder="Опишите, как данный модуль позволит достичь заявленной учебной цели" [(ngModel)]="teacher.exercisesByLessons"></textarea>
     </div>
