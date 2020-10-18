@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { TeacherInstructionsService } from 'src/api/services';
+import { TeacherInstructionsResponse } from 'src/api/models';
 
 @Component({
   selector: 'app-second-step',
@@ -8,13 +10,29 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 })
 export class SecondStepComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private teacherService: TeacherInstructionsService, private router: Router) { }
 
   id: string;
+  teacher: TeacherInstructionsResponse = {
+    challenges: '',
+    exercisesByLessons: '',
+    generalMeaning: ''
+  };
+
+  async onClickNext() {
+    await this.teacherService.apiModulesModuleIdTeacherInstructionsPut({moduleId: +this.id, body: this.teacher}).toPromise();
+    this.router.navigate(['']);
+  }
+
+  async onClickBack() {
+    await this.teacherService.apiModulesModuleIdTeacherInstructionsPut({moduleId: +this.id, body: this.teacher}).toPromise();
+  }
 
   async ngOnInit(): Promise<void> {
       this.id = this.route.snapshot.paramMap.get('id');
 
-      
+      this.teacher = await this.teacherService.apiModulesModuleIdTeacherInstructionsGet$Json({moduleId: +this.id}).toPromise();
   }
+
+
 }
