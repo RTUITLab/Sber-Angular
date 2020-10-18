@@ -441,4 +441,53 @@ export class ModulesService extends BaseService {
     );
   }
 
+  /**
+   * Path part for operation apiModulesIdDonePut
+   */
+  static readonly ApiModulesIdDonePutPath = '/api/Modules/{id}/done';
+
+  /**
+   * This method provides access to the full `HttpResponse`, allowing access to response headers.
+   * To access only the response body, use `apiModulesIdDonePut()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiModulesIdDonePut$Response(params: {
+    id: number;
+
+  }): Observable<StrictHttpResponse<void>> {
+
+    const rb = new RequestBuilder(this.rootUrl, ModulesService.ApiModulesIdDonePutPath, 'put');
+    if (params) {
+
+      rb.path('id', params.id, {});
+
+    }
+    return this.http.request(rb.build({
+      responseType: 'text',
+      accept: '*/*'
+    })).pipe(
+      filter((r: any) => r instanceof HttpResponse),
+      map((r: HttpResponse<any>) => {
+        return (r as HttpResponse<any>).clone({ body: undefined }) as StrictHttpResponse<void>;
+      })
+    );
+  }
+
+  /**
+   * This method provides access to only to the response body.
+   * To access the full response (for headers, for example), `apiModulesIdDonePut$Response()` instead.
+   *
+   * This method doesn't expect any request body.
+   */
+  apiModulesIdDonePut(params: {
+    id: number;
+
+  }): Observable<void> {
+
+    return this.apiModulesIdDonePut$Response(params).pipe(
+      map((r: StrictHttpResponse<void>) => r.body as void)
+    );
+  }
+
 }

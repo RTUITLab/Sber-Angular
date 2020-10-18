@@ -217,24 +217,24 @@ export class CommentsService extends BaseService {
   }
 
   /**
-   * Path part for operation apiModulesModuleIdCommentsAcceptIdPost
+   * Path part for operation apiModulesModuleIdCommentsIdAcceptPost
    */
-  static readonly ApiModulesModuleIdCommentsAcceptIdPostPath = '/api/modules/{moduleId}/comments/accept/{id}';
+  static readonly ApiModulesModuleIdCommentsIdAcceptPostPath = '/api/modules/{moduleId}/comments/{id}/accept';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsAcceptIdPost$Plain()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdAcceptPost$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsAcceptIdPost$Plain$Response(params: {
+  apiModulesModuleIdCommentsIdAcceptPost$Plain$Response(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
 
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsAcceptIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdAcceptPostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -255,36 +255,36 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsAcceptIdPost$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdAcceptPost$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsAcceptIdPost$Plain(params: {
+  apiModulesModuleIdCommentsIdAcceptPost$Plain(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
 
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsAcceptIdPost$Plain$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdAcceptPost$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsAcceptIdPost$Json()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdAcceptPost$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsAcceptIdPost$Json$Response(params: {
+  apiModulesModuleIdCommentsIdAcceptPost$Json$Response(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
 
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsAcceptIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdAcceptPostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -305,41 +305,41 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsAcceptIdPost$Json$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdAcceptPost$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsAcceptIdPost$Json(params: {
+  apiModulesModuleIdCommentsIdAcceptPost$Json(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
 
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsAcceptIdPost$Json$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdAcceptPost$Json$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
 
   /**
-   * Path part for operation apiModulesModuleIdCommentsRejectIdPost
+   * Path part for operation apiModulesModuleIdCommentsIdRejectPost
    */
-  static readonly ApiModulesModuleIdCommentsRejectIdPostPath = '/api/modules/{moduleId}/comments/reject/{id}';
+  static readonly ApiModulesModuleIdCommentsIdRejectPostPath = '/api/modules/{moduleId}/comments/{id}/reject';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsRejectIdPost$Plain()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdRejectPost$Plain()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  apiModulesModuleIdCommentsRejectIdPost$Plain$Response(params: {
+  apiModulesModuleIdCommentsIdRejectPost$Plain$Response(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
       body?: null | string
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsRejectIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdRejectPostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -361,36 +361,36 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsRejectIdPost$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdRejectPost$Plain$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  apiModulesModuleIdCommentsRejectIdPost$Plain(params: {
+  apiModulesModuleIdCommentsIdRejectPost$Plain(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
       body?: null | string
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsRejectIdPost$Plain$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdRejectPost$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsRejectIdPost$Json()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdRejectPost$Json()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  apiModulesModuleIdCommentsRejectIdPost$Json$Response(params: {
+  apiModulesModuleIdCommentsIdRejectPost$Json$Response(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
       body?: null | string
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsRejectIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdRejectPostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -412,40 +412,40 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsRejectIdPost$Json$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdRejectPost$Json$Response()` instead.
    *
    * This method sends `application/*+json` and handles request body of type `application/*+json`.
    */
-  apiModulesModuleIdCommentsRejectIdPost$Json(params: {
+  apiModulesModuleIdCommentsIdRejectPost$Json(params: {
     moduleId: number;
     id: number;
     UserName?: null | string;
       body?: null | string
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsRejectIdPost$Json$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdRejectPost$Json$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
 
   /**
-   * Path part for operation apiModulesModuleIdCommentsDoneIdPost
+   * Path part for operation apiModulesModuleIdCommentsIdDonePost
    */
-  static readonly ApiModulesModuleIdCommentsDoneIdPostPath = '/api/modules/{moduleId}/comments/done/{id}';
+  static readonly ApiModulesModuleIdCommentsIdDonePostPath = '/api/modules/{moduleId}/comments/{id}/done';
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsDoneIdPost$Plain()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdDonePost$Plain()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsDoneIdPost$Plain$Response(params: {
+  apiModulesModuleIdCommentsIdDonePost$Plain$Response(params: {
     moduleId: number;
     id: number;
 
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsDoneIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdDonePostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -465,34 +465,34 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsDoneIdPost$Plain$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdDonePost$Plain$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsDoneIdPost$Plain(params: {
+  apiModulesModuleIdCommentsIdDonePost$Plain(params: {
     moduleId: number;
     id: number;
 
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsDoneIdPost$Plain$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdDonePost$Plain$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
 
   /**
    * This method provides access to the full `HttpResponse`, allowing access to response headers.
-   * To access only the response body, use `apiModulesModuleIdCommentsDoneIdPost$Json()` instead.
+   * To access only the response body, use `apiModulesModuleIdCommentsIdDonePost$Json()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsDoneIdPost$Json$Response(params: {
+  apiModulesModuleIdCommentsIdDonePost$Json$Response(params: {
     moduleId: number;
     id: number;
 
   }): Observable<StrictHttpResponse<CommentResponse>> {
 
-    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsDoneIdPostPath, 'post');
+    const rb = new RequestBuilder(this.rootUrl, CommentsService.ApiModulesModuleIdCommentsIdDonePostPath, 'post');
     if (params) {
 
       rb.path('moduleId', params.moduleId, {});
@@ -512,17 +512,17 @@ export class CommentsService extends BaseService {
 
   /**
    * This method provides access to only to the response body.
-   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsDoneIdPost$Json$Response()` instead.
+   * To access the full response (for headers, for example), `apiModulesModuleIdCommentsIdDonePost$Json$Response()` instead.
    *
    * This method doesn't expect any request body.
    */
-  apiModulesModuleIdCommentsDoneIdPost$Json(params: {
+  apiModulesModuleIdCommentsIdDonePost$Json(params: {
     moduleId: number;
     id: number;
 
   }): Observable<CommentResponse> {
 
-    return this.apiModulesModuleIdCommentsDoneIdPost$Json$Response(params).pipe(
+    return this.apiModulesModuleIdCommentsIdDonePost$Json$Response(params).pipe(
       map((r: StrictHttpResponse<CommentResponse>) => r.body as CommentResponse)
     );
   }
