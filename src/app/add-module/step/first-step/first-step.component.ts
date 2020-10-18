@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateEditModuleRequest, ModuleCompactResponse, ModuleResponse, CourseResponse } from 'src/api/models';
-import { ModulesService, CoursesService } from 'src/api/services';
+import { CreateEditModuleRequest, ModuleCompactResponse, ModuleResponse, CourseResponse, CommentResponse } from 'src/api/models';
+import { ModulesService, CoursesService, CommentsService } from 'src/api/services';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ModuleVisibility } from 'src/api/models/module-visibility';
 import { Observable } from 'rxjs';
@@ -22,7 +22,8 @@ export class FirstStepComponent implements OnInit {
     visibility: ModuleVisibility.School
   };
   // tslint:disable-next-line: max-line-length
-  constructor(private route: ActivatedRoute, private modulesService: ModulesService, private router: Router, private courseService: CoursesService) { }
+  constructor(private route: ActivatedRoute, private modulesService: ModulesService, private router: Router,
+              private courseService: CoursesService, private commentService: CommentsService) { }
 
 tag: string;
 class: string;
@@ -35,6 +36,13 @@ courses: CourseResponse[] = [];
 tags: string[] = [];
 
 fullModel: ModuleResponse;
+
+isChecked = false;
+
+// tslint:disable-next-line: new-parens
+commentMap = new Map();
+
+comments: CommentResponse[] = [];
 
 modelR: ModuleCompactResponse;
 
@@ -52,6 +60,16 @@ modelR: ModuleCompactResponse;
         this.class = this.fullModel.classLevel.toString();
         this.visibility = this.fullModel.visibility.toString();
         this.time = this.fullModel.laborIntensity.toString();
+        this.isChecked = this.fullModel.generalPart.containsError;
+        if (this.isChecked)  {
+          this.comments = await this.commentService.apiModulesModuleIdCommentsGet$Json({moduleId: +this.id}).toPromise();
+          for(let i of this.comments)
+          {
+            if(i.part === 'General') {
+              this.commentMap.set(i.pathToField, i.message);
+            }
+          }
+        }
       }
   }
 
