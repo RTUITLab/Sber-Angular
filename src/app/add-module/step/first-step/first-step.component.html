@@ -1,10 +1,28 @@
 <div class="form">
     <div style="grid-row: 1;" class="header"><span>Шаг 1.1:</span>&nbsp;Основная информация</div>
     <div style="grid-row: 2;" class="name">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button matButton>Исправлено</button>
+                <button gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Название</label>
         <input type="text" required placeholder="Введите название модуля" [(ngModel)]="module.title">
     </div>
     <div style="grid-row: 3;" class="general">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button matButton>Исправлено</button>
+                <button gray matButton>Не согласен</button>
+            </div>
+        </div>
         <div class="levels">
             <label>Уровень видимости</label>
             <mat-radio-group aria-label="Уровень видимости" [(ngModel)]="visibility">
@@ -70,6 +88,15 @@
         </div>
     </div>
     <div style="grid-row: 4; display: grid; grid-template-columns: 50% 50%; width: 100%;">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button matButton>Исправлено</button>
+                <button gray matButton>Не согласен</button>
+            </div>
+        </div>
         <div class="tags">
             <label>Теги</label>
             <input type="text" placeholder="Добавьте теги для модуля" [(ngModel)]="tag" (keyup.enter)="onEnter($event)">
@@ -83,10 +110,28 @@
         </div>
     </div>
     <div class="idea">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button matButton>Исправлено</button>
+                <button gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Базовая идея</label>
         <textarea matInput required [(ngModel)]="module.basicIdea">Главная мысль, в понимание которой вносит вклад этот модуль</textarea>
     </div>
     <div class="problem">
+        <div class="commentArea">
+            <div class="comment">
+                TEXT
+            </div>
+            <div id="buttons">
+                <button matButton>Исправлено</button>
+                <button gray matButton>Не согласен</button>
+            </div>
+        </div>
         <label>Проблемный вопрос</label>
         <textarea required [(ngModel)]="module.problemQuestion">Сложный вопрос, ответить на который будет возможно после прохождения модуля</textarea>
     </div>
