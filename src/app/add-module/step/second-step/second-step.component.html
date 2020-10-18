@@ -7,7 +7,7 @@
             </div>
             <div id="buttons">
                 <button comment matButton (click)="doneComment(commentMap.get('generalMeaning'))">Исправлено</button>
-                <button comment gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('generalMeaning'))" comment gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Общий замысел модуля</label>
@@ -20,7 +20,7 @@
             </div>
             <div id="buttons">
                 <button comment matButton (click)="doneComment(commentMap.get('challenges'))">Исправлено</button>
-                <button comment gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('challenges'))" comment gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Типовое распределение заданий по урокам</label>
@@ -33,7 +33,7 @@
             </div>
             <div id="buttons">
                 <button comment matButton (click)="doneComment(commentMap.get('exercisesByLessons'))">Исправлено</button>
-                <button comment gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('exercisesByLessons'))" comment gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Возможные трудности, ложные представления и способы их преодоления</label>

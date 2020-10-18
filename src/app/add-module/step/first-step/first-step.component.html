@@ -20,7 +20,7 @@
             </div>
             <div id="buttons">
                 <button matButton (click)="doneComment(commentMap.get('general'))">Исправлено</button>
-                <button gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('general'))" gray matButton>Не согласен</button>
             </div>
         </div>
         <div class="levels">
@@ -94,7 +94,7 @@
             </div>
             <div id="buttons">
                 <button matButton (click)="doneComment(commentMap.get('tags'))">Исправлено</button>
-                <button gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('tags'))" gray matButton>Не согласен</button>
             </div>
         </div>
         <div class="tags">
@@ -116,7 +116,7 @@
             </div>
             <div id="buttons">
                 <button matButton (click)="doneComment(commentMap.get('idea'))">Исправлено</button>
-                <button gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('idea'))" gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Базовая идея</label>
@@ -129,7 +129,7 @@
             </div>
             <div id="buttons">
                 <button matButton (click)="doneComment(commentMap.get('problem'))">Исправлено</button>
-                <button gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('problem'))" gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Проблемный вопрос</label>

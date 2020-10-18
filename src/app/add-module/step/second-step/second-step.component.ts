@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { TeacherInstructionsService, CommentsService } from 'src/api/services';
 import { TeacherInstructionsResponse, CommentResponse } from 'src/api/models';
+import {MatDialog} from '@angular/material/dialog';
+import { CommentDialog } from '../first-step/first-step.component';
 
 @Component({
   selector: 'app-second-step',
@@ -11,7 +13,7 @@ import { TeacherInstructionsResponse, CommentResponse } from 'src/api/models';
 export class SecondStepComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private teacherService: TeacherInstructionsService,
-              private router: Router, private commentService: CommentsService) { }
+              private router: Router, private commentService: CommentsService,  public dialog: MatDialog) { }
 
   id: string;
   teacher: TeacherInstructionsResponse = {
@@ -53,5 +55,18 @@ comments: CommentResponse[] = [];
       }
  }
 
+ openDialog(comment: CommentResponse) {
+  const dialogRef = this.dialog.open(CommentDialog, {maxWidth: 500, minHeight: 500});
+
+  dialogRef.afterClosed().subscribe(result => {
+    console.log(`Dialog result: ${result}`);
+    if (result) {
+      this.commentService.apiModulesModuleIdCommentsIdDonePost$Json({
+        moduleId: +this.id,
+        id: comment.id
+      }).subscribe(r => this.commentMap.delete(comment.pathToField));
+    }
+  });
+}
 
 }
