@@ -1,20 +1,21 @@
-<p class="my-module"> Мои модули</p>
+<div class="header"> Мои модули</div>
 <div class="search">
-    <input type="text" class="search-input" placeholder="поиск">
+    <input type="text" class="search-input" placeholder="Поиск">
+    <img src="../../../assets/icons/searching.svg">
 </div>
 <div>
-    <h4>По статусу:</h4>
-    <p>Готовые материалы</p>
-    <p>Материалы на проверке</p>
-    <p>Внести правки</p>
-    <p>Незавершенные материалы</p>
+    <label>По статусу:</label>
+    <div class="filterName"><div class="circle" c1></div>Готовые материалы</div>
+    <div class="filterName"><div class="circle" c2></div>Материалы на проверке</div>
+    <div class="filterName"><div class="circle" c3></div>Внести правки</div>
+    <div class="filterName"><div class="circle" c4></div>Незавершенные материалы</div>
 </div>
 <div>
     <h4>Фильтры:</h4>
     <div>
-        <mat-form-field appearance="fill">
+        <mat-form-field  appearance="fill">
             <mat-label>Предмет</mat-label>
-            <mat-select>
+            <mat-select matNativeControl>
                 <mat-option *ngFor="let food of foods" [value]="food.value">
                     {{food.viewValue}}
                 </mat-option>
@@ -38,5 +39,5 @@
         </mat-form-field>
     </div>
 
-    <button mat-raised-button color="primary">На главную</button>
+    <button mat-raised-button class="button"><img class="left" src="../../assets/icons/down-arrow.svg">Главная</button>
 </div>

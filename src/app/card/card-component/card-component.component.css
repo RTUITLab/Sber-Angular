@@ -1,59 +1,130 @@
 .content {
-    padding-left: 5%;
-    padding-top: 2%;
-    padding-right: 5%;
     display: grid;
-    margin: 0;
+    margin: 20px;
+    color: #525252;
 }
 
-.current-filter {
-    grid-column: 1;
-    grid-row: 1;
+.header {
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 22px;
 }
 
-.filter-title {
-    grid-row: 1;
+.filters {
+    color: #949393;
+}
+
+h4 {
+    margin: 20px 0 10px 0;
 }
 
 p {
     font-size: 20px;
 }
 
-.filters-value {
-    grid-row: 2;
+.current-filter {
+    margin-left: 20px;
 }
 
 .test {
     display: inline-block;
     width: max-content;
     margin: 0;
-    margin-right: 20px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    background-color: #e4e4e4;
+}
+
+.test > img {
+    height: 15px;
+    width: 15px;
+    margin-left: 10px;
+    vertical-align: middle;
+    transform: rotate(45deg);
 }
 
 .create-module {
     grid-column: 2;
+    margin-right: 20px;
     align-self: center;
     text-align: right;
 }
 
 .create-module-input {
-    height: 57px;
-    width: 302px;
+    vertical-align: middle;
+    border: none;
+    padding: 15px;
+    color: #FFFFFF;
+    background-color: #6100ee;
     font-size: 20px;
 }
 
+.create-module-input img {
+    vertical-align: middle;
+    margin: 0 10px;
+    width: 22px;
+    height: 22px;
+}
+
 .modules {
-    padding-top: 5%;
+    display: grid;
     grid-column-start: 1;
     grid-column-end: 3;
-    margin: 0;
-    grid-column: auto;
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    overflow: auto;
 }
 
 .module {
-    width: 476px;
-    height: 308px;
-    border: solid 1px #979797;
-    background-color: #d8d8d8;
-    margin: 0;
+    height: 310px;
+    padding: 20px;
+    margin: 20px;
+    color: #FFFFFF;
+}
+
+*[grad="0"] {
+    background-image: linear-gradient(to top, #b47f19 -15%, #e5c177);
+}
+
+*[grad="1"] {
+    background-image: linear-gradient(to top, #4a53b7 -15%, #6aa1e2);
+}
+
+*[grad="2"] {
+    background-image: linear-gradient(to top, #ae4ab6 -15%, #b16be3);
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.status {
+    grid-column: 1;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.status > .circle {
+    display: inline-block;
+    margin-right: 15px;
+    height: 15px;
+    width: 15px;
+    border-radius: 50px;
+    background-color: #FFFFFF;
+}
+
+.last {
+    grid-column: 1;
+    color: #e5e5e5;
+}
+
+.image {
+    grid-column: 2;
+}
+
+.image > img {
+    width: 125px;
+    height: 125px;
 }

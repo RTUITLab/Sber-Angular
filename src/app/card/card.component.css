@@ -6,9 +6,9 @@
 
 .tab-menu {
     grid-column: 1;
-    border: solid 1px #979797;
-    background: #d8d8d8;
-    padding-left: 10%;
+    background-image: linear-gradient(to bottom, #74ac92, #80d997 57%, #9dea96);
+    color: #FFFFFF;
+    padding: 0 20px;
     font-size: 20px;
 }
 
