@@ -60,9 +60,9 @@
             <div>
                 <label>Предмет</label>
                 <mat-form-field appearance="fill">
-                    <mat-select [(ngModel)]="module.course">
-                        <mat-option value="кек">
-                            "Kek"
+                    <mat-select [(ngModel)]="course">
+                        <mat-option *ngFor="let item of courses" [value]="item.id">
+                            {{item.title}}
                         </mat-option>
                     </mat-select>
                 </mat-form-field>

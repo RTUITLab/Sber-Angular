@@ -12,7 +12,9 @@ export class SecondStepComponent implements OnInit {
 
   id: string;
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
       this.id = this.route.snapshot.paramMap.get('id');
+
+      
   }
 }
