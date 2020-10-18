@@ -116,18 +116,16 @@ modelR: ModuleCompactResponse;
     }).toPromise();
     this.router.navigate(['../secondStep/', this.modelR.id], { relativeTo: this.route});
   }
-  openDialog() {
+  openDialog(comment: CommentResponse) {
     const dialogRef = this.dialog.open(CommentDialog, {maxWidth: 500, minHeight: 500});
 
-    dialogRef.afterClosed().subscribe(async result => {
+    dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       if (result) {
-        // await this.commentService.apiModulesModuleIdCommentsIdRejectPost$Json( {
-        //   moduleId: module.id,
-        //   id: 1,
-        //   UserName: "username",
-        //   body: ""
-        // })
+        this.commentService.apiModulesModuleIdCommentsIdDonePost$Json({
+          moduleId: +this.id,
+          id: comment.id
+        }).subscribe(r => this.commentMap.delete(comment.pathToField));
       }
     });
   }

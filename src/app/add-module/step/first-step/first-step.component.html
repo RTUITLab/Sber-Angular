@@ -7,7 +7,7 @@
             </div>
             <div id="buttons">
                 <button matButton (click)="doneComment(commentMap.get('name'))">Исправлено</button>
-                <button (click)="openDialog()" gray matButton>Не согласен</button>
+                <button (click)="openDialog(commentMap.get('name'))" gray matButton>Не согласен</button>
             </div>
         </div>
         <label>Название</label>
