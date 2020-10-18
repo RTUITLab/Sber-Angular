@@ -1,8 +1,8 @@
 <div class="form">
     <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
     <div class="area">
-        <div class="commentArea">
-            <div class="comment" *ngIf="commentMap.has('generalMeaning')">
+        <div class="commentArea" *ngIf="commentMap.has('generalMeaning')">
+            <div class="comment">
                 {{commentMap.get('generalMeaning')}}
             </div>
             <div id="buttons">
@@ -14,8 +14,8 @@
         <textarea required [(ngModel)]="teacher.generalMeaning"></textarea>
     </div>
     <div class="area">
-        <div class="commentArea">
-            <div class="comment" *ngIf="commentMap.has('challenges')">
+        <div class="commentArea" *ngIf="commentMap.has('challenges')">
+            <div class="comment">
                 {{commentMap.get('challenges')}}
             </div>
             <div id="buttons">
@@ -27,8 +27,8 @@
         <textarea required [(ngModel)]="teacher.challenges"></textarea>
     </div>
     <div class="area">
-        <div class="commentArea">
-            <div class="comment" *ngIf="commentMap.has('exercisesByLessons')">
+        <div class="commentArea" *ngIf="commentMap.has('exercisesByLessons')">
+            <div class="comment">
                 {{commentMap.get('exercisesByLessons')}}
             </div>
             <div id="buttons">

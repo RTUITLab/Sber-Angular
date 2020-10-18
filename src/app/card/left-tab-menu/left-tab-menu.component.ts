@@ -1,6 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { QueryParam, QueryParamBuilder } from '@ngqp/core';
 import { CourseResponse } from 'src/api/models/course-response';
 import { CoursesService } from 'src/api/services/courses.service';
 import { TagsService } from 'src/api/services/tags.service';
