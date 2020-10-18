@@ -1,0 +1,29 @@
+<div>
+    <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
+    <div>
+        <label>Общий замысел модуля</label>
+        <input type="text" required>
+    </div>
+    <div>
+        <label>Типовое распределение заданий по урокам</label>
+        <input type="text" required>
+    </div>
+    <div>
+        <label>Возможные трудности, ложные представления и способы их преодоления</label>
+        <input type="text" required placeholder="Опишите, как данный модуль позволит достичь заявленной учебной цели">
+    </div>
+
+    <div *ngIf="id !== null; else notIdButtonBack">
+        <button mat-button [routerLink]="['../../firstStep', id]" routerLinkActive="router-link-active">Перейти к предыдущему шагу</button>
+    </div>
+    <ng-template #notIdButtonBack>
+        <button mat-button routerLink="../firstStep" routerLinkActive="router-link-active">Перейти к предыдущему шагу</button>
+    </ng-template>
+
+    <div *ngIf="id !== null; else notIdButtonNext">
+        <button mat-button [routerLink]="''" routerLinkActive=" router-link-active ">Перейти к следующему шагу</button>
+    </div>
+    <ng-template #notIdButtonNext>
+        <button mat-button [routerLink]="''" routerLinkActive=" router-link-active ">Перейти к следующему шагу</button>
+    </ng-template>
+</div>
