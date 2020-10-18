@@ -42,7 +42,6 @@ modelR: ModuleCompactResponse;
       this.courses = await this.courseService.apiCoursesGet$Json().toPromise();
 
       this.id = this.route.snapshot.paramMap.get('id');
-      console.log(this.id);
       
       if (this.id !== null){
         this.fullModel = await this.modulesService.apiModulesIdGet$Json({id: +(this.id)}).toPromise();

@@ -2,30 +2,24 @@
     <div style="grid-row: 1;" class="header"><span>Шаг 1.2:</span>&nbsp;Заполните формы ниже</div>
     <div class="area">
         <label>Общий замысел модуля</label>
-        <textarea required></textarea>
+        <textarea required [(ngModel)]="teacher.generalMeaning"></textarea>
     </div>
     <div class="area">
         <label>Типовое распределение заданий по урокам</label>
-        <textarea required></textarea>
+        <textarea required [(ngModel)]="teacher.challenges"></textarea>
     </div>
     <div class="area">
         <label>Возможные трудности, ложные представления и способы их преодоления</label>
-        <textarea required placeholder="Опишите, как данный модуль позволит достичь заявленной учебной цели"></textarea>
+        <textarea required placeholder="Опишите, как данный модуль позволит достичь заявленной учебной цели" [(ngModel)]="teacher.exercisesByLessons"></textarea>
     </div>
 
     <div class="buttons">
-        <div *ngIf="id !== null; else notIdButtonBack">
+        <div>
             <button mat-button [routerLink]="['../../firstStep', id]" routerLinkActive="router-link-active">Перейти к предыдущему шагу</button>
         </div>
-        <ng-template #notIdButtonBack>
-            <button mat-button routerLink="../firstStep" routerLinkActive="router-link-active">Перейти к предыдущему шагу</button>
-        </ng-template>
 
-        <div *ngIf="id !== null; else notIdButtonNext">
-            <button right mat-button [routerLink]="''" routerLinkActive=" router-link-active ">Перейти к следующему шагу</button>
+        <div>
+            <button right mat-button (click)="onClickNext()">Перейти к следующему шагу</button>
         </div>
-        <ng-template #notIdButtonNext>
-            <button right mat-button [routerLink]="''" routerLinkActive=" router-link-active ">Перейти к следующему шагу</button>
-        </ng-template>
     </div>
 </div>
