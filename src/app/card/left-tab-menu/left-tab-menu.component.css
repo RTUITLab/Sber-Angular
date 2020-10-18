@@ -81,3 +81,13 @@ label {
     height: 20px;
     vertical-align: middle;
 }
+
+.panel {
+    width: 100%;
+    font-family: HelveticaNeueCyr;
+    color: #FFF;
+}
+
+::ng-deep .mat-form-field-hide-placeholder .mat-select-placeholder {
+    color: #FFFFFF !important;
+}

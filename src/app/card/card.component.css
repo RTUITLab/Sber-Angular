@@ -5,6 +5,9 @@
 }
 
 .tab-menu {
+    position: fixed;
+    width: 25%;
+    box-sizing: border-box;
     grid-column: 1;
     background-image: linear-gradient(to bottom, #74ac92, #80d997 57%, #9dea96);
     color: #FFFFFF;

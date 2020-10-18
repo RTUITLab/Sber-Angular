@@ -13,15 +13,15 @@
 <div>
     <h4>Фильтры:</h4>
     <div>
-        <mat-form-field  appearance="fill">
+        <mat-form-field class="panel" appearance="fill">
             <mat-label>Предмет</mat-label>
-            <mat-select matNativeControl>
+            <mat-select class="panel" matNativeControl>
                 <mat-option *ngFor="let food of foods" [value]="food.value">
                     {{food.viewValue}}
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="panel">
             <mat-label>Класс</mat-label>
             <mat-select>
                 <mat-option *ngFor="let food of foods" [value]="food.value">
@@ -29,7 +29,7 @@
                 </mat-option>
             </mat-select>
         </mat-form-field>
-        <mat-form-field appearance="fill">
+        <mat-form-field appearance="fill" class="panel">
             <mat-label>Тег</mat-label>
             <mat-select>
                 <mat-option *ngFor="let food of foods" [value]="food.value">

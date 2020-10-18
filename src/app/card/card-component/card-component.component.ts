@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { ModuleCompactResponse, ModuleStatus } from 'src/api/models';
+import { ModuleCompactResponse } from 'src/api/models';
+import { ModuleStatus } from 'src/api/models/module-status';
 import { ModulesService } from 'src/api/services';
 
 
@@ -71,5 +72,15 @@ export class CardComponentComponent implements OnInit {
   public getBackground(e) {
     console.log(e);
     return this.gradients[e];
+  }
+
+  public getIcon(i: number) {
+    let icons = [
+      'earth-day.svg',
+      'recycle-bag.svg',
+      'windmill.svg'
+    ];
+
+    return icons[i % icons.length];
   }
 }
