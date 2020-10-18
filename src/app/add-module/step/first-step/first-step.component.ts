@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CreateEditModuleRequest } from 'src/api/models';
+import { CreateEditModuleRequest, ModuleCompactResponse } from 'src/api/models';
 import { ModulesService } from 'src/api/services';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { ModuleVisibility } from 'src/api/models/module-visibility';
@@ -20,7 +20,7 @@ export class FirstStepComponent implements OnInit {
     title: '',
     visibility: ModuleVisibility.School
   };
-  constructor(private route: ActivatedRoute, private modulesService: ModulesService) { }
+  constructor(private route: ActivatedRoute, private modulesService: ModulesService, private router: Router) { }
 
 tag: string;
 class: string;
@@ -28,20 +28,26 @@ time: string;
 visibility: string;
 id: string;
 
+modelR: ModuleCompactResponse;
+
   ngOnInit(): void {
       this.id = this.route.snapshot.paramMap.get('id');
   }
 
-  async onClick() {
+  onClickPut() {
+    this.router.navigate(['../../secondStep/', this.id], { relativeTo: this.route});
+  }
+
+  async onClickCreate() {
     console.log(this.module);
     this.module.classLevel = +this.class;
     this.module.laborIntensity = +this.time;
     this.module.visibility = ModuleVisibility[this.visibility];
     this.module.tags.push(this.tag);
-    await this.modulesService.apiModulesPost$Json( {
+    this.modelR = await this.modulesService.apiModulesPost$Json( {
       body: this.module
     }).toPromise();
-    
+    this.router.navigate(['../secondStep/', this.modelR.id], { relativeTo: this.route});
   }
 
 }
